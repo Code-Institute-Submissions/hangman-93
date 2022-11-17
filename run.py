@@ -18,25 +18,30 @@ def main():
     lives = 5
     for letter in computer_word:
         print("_"+" ", end=" ")
-    while lives > 0:
+    while lives > 0 and len(computer_word) > 0:
         user_input = input("Enter a letter: ")
         if user_input in computer_word:
             print(f"Well Done {computer_word}")
             user_choices.append(user_input)
-            for i in computer_word: # not removing all instances of user input
-                if i == user_input:
-                    computer_word.remove(i)
+            while user_input in computer_word:
+                computer_word.remove(user_input)
+                
             # If letter correct, remove it from list,
             # then if word list empty, player won
-            print(user_choices)
+            
+            print(f"user_choices are {user_choices}")
+            print(f"Reduced word {computer_word}")
         else:
             print(f"Hard luck {computer_word}")
             user_choices.append(user_input)
-            print(user_choices)
+            print(f"user_choices are {user_choices}")
             lives -= 1
             print(f"You have {lives} lives left")
-
-    print("Game over")
+    
+    if len(computer_word) == 0:
+        print("Winner")
+    else:
+        print("Game over")
 
 
 main()
