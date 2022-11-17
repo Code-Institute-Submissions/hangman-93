@@ -3,7 +3,7 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
 import random
 
-words = ["bob", "world", "hellooooooo"]
+words = ["bobnoonb", "worllldorq", "helloooooooeh"]
 computer_word = list(random.choice(words))
 
 
@@ -13,7 +13,7 @@ def main():
     take a user input and check if in the
     word the computer has chosen and print message accordingly
     """
-    print()
+    print("\n")
     user_choices = []
     lives = 5
     for letter in computer_word:
@@ -23,8 +23,9 @@ def main():
         if user_input in computer_word:
             print(f"Well Done {computer_word}")
             user_choices.append(user_input)
-            for user_input in computer_word:
-                computer_word.remove(user_input)
+            for i in computer_word: # not removing all instances of user input
+                if i == user_input:
+                    computer_word.remove(i)
             # If letter correct, remove it from list,
             # then if word list empty, player won
             print(user_choices)
