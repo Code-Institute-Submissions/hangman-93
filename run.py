@@ -4,8 +4,8 @@
 import random
 
 words = ["bobnoonb", "worllldorq", "helloooooooeh"]
-computer_word = list(random.choice(words))
-
+word = random.choice(words)
+computer_word = list(word)
 
 def main():
     """
@@ -16,21 +16,23 @@ def main():
     print("\n")
     user_choices = []
     lives = 5
-    for letter in computer_word:
-        print("_"+" ", end=" ")
-    while lives > 0 and len(computer_word) > 0:
-        user_input = input("Enter a letter: ")
+    correct_guesses = []
+    for letters in word:
+        print("_ ", end = " ")
+    while lives > 0 and len(computer_word) != len(correct_guesses):
+        user_input = input("\nEnter a letter: ")
         if user_input in computer_word:
             print(f"Well Done {computer_word}")
             user_choices.append(user_input)
             while user_input in computer_word:
+                correct_guesses.append(user_input)
+                new_word = [char if char in correct_guesses else "_ " for char in word]
+                print("New Word: " + " ".join(new_word))
+                print(f"Formatted word: {word}")
                 computer_word.remove(user_input)
-                
-            # If letter correct, remove it from list,
-            # then if word list empty, player won
-            
-            print(f"user_choices are {user_choices}")
-            print(f"Reduced word {computer_word}")
+                print(f"Correct letters : {correct_guesses}")
+                print(f"user_choices are {user_choices}")
+                print(f"Reduced word {computer_word}")
         else:
             print(f"Hard luck {computer_word}")
             user_choices.append(user_input)
