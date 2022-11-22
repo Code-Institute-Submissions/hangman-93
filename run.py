@@ -19,10 +19,8 @@ def main():
     user_choices = []
     lives = 6
     correct_guesses = []
-    new_word = []
-    for letters in word:
-        print("_ ", end=" ")
     new_word = [char if char in correct_guesses else "_ " for char in word]
+    print(" ".join(new_word))
     while lives > 0 and len(computer_word) != 0:
         user_input = input("\nEnter a letter: ")
         if user_input in computer_word:
