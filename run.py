@@ -16,19 +16,20 @@ def get_input():
     Function to check if user input is a valid letter and if so return it
     in uppercase, if not ask for another letter
     """
-    guess = input("\nEnter a letter: ").upper()
-    if guess.isalpha() and guess not in user_choices:
-        return guess
-    elif guess.isalpha() and guess in user_choices:
-        print("You've already picked that letter. Please try again.")
-        print(f"Correct letters : {set(correct_guesses)}")
-        print(f"user_choices are : {user_choices}")
-        get_input()
-    else:
-        print("That's not a letter! Please try again")
-        print(f"Correct letters : {set(correct_guesses)}")
-        print(f"user_choices are : {user_choices}")
-        get_input()
+    while True:
+        guess = input("\nEnter a letter: ").upper()
+        if guess.isalpha() and guess not in user_choices:
+            return guess
+        elif guess.isalpha() and guess in user_choices:
+            print("You've already picked that letter. Please try again.")
+            print(f"Correct letters : {set(correct_guesses)}")
+            print(f"user_choices are : {user_choices}")
+            continue
+        else:
+            print("That's not a letter! Please try again")
+            print(f"Correct letters : {set(correct_guesses)}")
+            print(f"user_choices are : {user_choices}")
+            continue
 
 
 def main():
@@ -37,9 +38,10 @@ def main():
     take a user input and check if it is in the
     word the computer has chosen and print message accordingly
     """
-    print("\n")
+    print("\nWelcome to Hangman! \nYou have 6 attempts to guess the write letters in the word")
     lives = 6
     new_word = [char if char in correct_guesses else "_ " for char in word]
+    print()
     print(" ".join(new_word))
     while lives > 0 and len(computer_word) != 0:
         user_input = get_input()
