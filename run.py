@@ -6,7 +6,7 @@ import random
 words = ["bobnoonb", "worllldorq", "helloooooooeh"]
 word = random.choice(words)
 computer_word = list(word)
-images = ["Hanged", "_____", "two", "Three", "Four", "All lives left"]
+images = ["Hanged", "_____", "two", "Three", "Four","Five","All lives left"]
 
 
 def main():
@@ -17,7 +17,7 @@ def main():
     """
     print("\n")
     user_choices = []
-    lives = 5
+    lives = 6
     correct_guesses = []
     new_word = []
     for letters in word:
