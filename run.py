@@ -7,6 +7,15 @@ words = ["bobnoonb", "worllldorq", "helloooooooeh"]
 word = random.choice(words)
 computer_word = list(word)
 images = ["Hanged", "_____", "two", "Three", "Four","Five","All lives left"]
+user_choices = []
+correct_guesses = []
+
+
+def check_input(guess):
+    if guess.isalpha():
+        print(guess)
+    else:
+        print("Please enter a valid letter")
 
 
 def main():
@@ -16,13 +25,12 @@ def main():
     word the computer has chosen and print message accordingly
     """
     print("\n")
-    user_choices = []
     lives = 6
-    correct_guesses = []
     new_word = [char if char in correct_guesses else "_ " for char in word]
     print(" ".join(new_word))
     while lives > 0 and len(computer_word) != 0:
         user_input = input("\nEnter a letter: ")
+        check_input(user_input)
         if user_input in computer_word:
             print(f"Well Done {computer_word}")
             user_choices.append(user_input)
