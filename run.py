@@ -18,8 +18,9 @@ def main():
     lives = 5
     correct_guesses = []
     for letters in word:
-        print("_ ", end = " ")
-    while lives > 0 and len(computer_word) != len(correct_guesses):
+        print("_ ", end=" ")
+
+    while lives > 0 and len(computer_word) != 0:
         user_input = input("\nEnter a letter: ")
         if user_input in computer_word:
             print(f"Well Done {computer_word}")
