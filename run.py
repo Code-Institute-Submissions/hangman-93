@@ -17,9 +17,10 @@ def main():
     user_choices = []
     lives = 5
     correct_guesses = []
+    new_word = []
     for letters in word:
         print("_ ", end=" ")
-
+    new_word = [char if char in correct_guesses else "_ " for char in word]
     while lives > 0 and len(computer_word) != 0:
         user_input = input("\nEnter a letter: ")
         if user_input in computer_word:
@@ -29,22 +30,24 @@ def main():
                 correct_guesses.append(user_input)
                 new_word = [char if char in correct_guesses else "_ " for char in word]
                 print("New Word: " + " ".join(new_word))
-                print(f"Formatted word: {word}")
                 computer_word.remove(user_input)
                 print(f"Correct letters : {correct_guesses}")
-                print(f"user_choices are {user_choices}")
-                print(f"Reduced word {computer_word}")
+                print(f"user_choices are : {user_choices}")
+                
         else:
-            print(f"Hard luck {computer_word}")
+            print("Hard luck")
             user_choices.append(user_input)
-            print(f"user_choices are {user_choices}")
+            print(f"User_choices are {user_choices}")
             lives -= 1
             print(f"You have {lives} lives left")
+            print("New Word: " + " ".join(new_word))
     
     if len(computer_word) == 0:
         print("Winner")
+        print("The word was : "+" ".join(new_word))
     else:
         print("Game over")
+        print("The Word was :" + word)
 
 
 main()
