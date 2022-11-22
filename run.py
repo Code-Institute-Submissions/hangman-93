@@ -30,8 +30,8 @@ def get_input():
 
 def main():
     """
-    test function to print dashes for amount of letters in a word,
-    take a user input and check if in the
+    Function to print dashes for amount of letters in a word,
+    take a user input and check if it is in the
     word the computer has chosen and print message accordingly
     """
     print("\n")
