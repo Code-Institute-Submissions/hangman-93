@@ -6,6 +6,7 @@ import random
 words = ["bobnoonb", "worllldorq", "helloooooooeh"]
 word = random.choice(words)
 computer_word = list(word)
+images = ["Hanged", "_____", "two", "Three", "Four", "All lives left"]
 
 def main():
     """
@@ -33,7 +34,7 @@ def main():
                 computer_word.remove(user_input)
                 print(f"Correct letters : {correct_guesses}")
                 print(f"user_choices are : {user_choices}")
-                
+                print(images[lives])
         else:
             print("Hard luck")
             user_choices.append(user_input)
@@ -41,13 +42,16 @@ def main():
             lives -= 1
             print(f"You have {lives} lives left")
             print("New Word: " + " ".join(new_word))
+            print(images[lives])
     
     if len(computer_word) == 0:
         print("Winner")
         print("The word was : "+" ".join(new_word))
+        print(images[lives])
     else:
         print("Game over")
         print("The Word was :" + word)
+        print(images[lives])
 
 
 main()
