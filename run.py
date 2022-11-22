@@ -19,6 +19,7 @@ def get_input():
     while True:
         guess = input("\nEnter a letter: ").upper()
         if guess.isalpha() and guess not in user_choices:
+            user_choices.append(guess)
             return guess
         elif guess.isalpha() and guess in user_choices:
             print("You've already picked that letter. Please try again.")
@@ -46,25 +47,22 @@ def main():
     while lives > 0 and len(computer_word) != 0:
         user_input = get_input()
         if user_input in computer_word:
-            user_choices.append(user_input)
-            print(f"Well Done {computer_word}")
+            print(f"Well Done {user_input} was in the word!")
             while user_input in computer_word:
                 correct_guesses.append(user_input)
                 computer_word.remove(user_input)
             print(f"Correct letters : {set(correct_guesses)}")
-            print(f"user_choices are : {user_choices}")
+            print(f"User Choices are : {user_choices}")
             print(images[lives])
             new_word = [char if char in correct_guesses else "_ " for char in word]
             print("New Word: " + " ".join(new_word))
         else:
-            print("Hard luck")
-            user_choices.append(user_input)
-            print(f"User_choices are {user_choices}")
+            print(f"Hard luck {user_input} was not in the word...")
+            print(f"User Choices are {user_choices}")
             lives -= 1
             print(f"You have {lives} lives left")
             print("New Word: " + " ".join(new_word))
             print(images[lives])
-    
     if len(computer_word) == 0:
         print("Winner")
         print("The word was : "+" ".join(new_word))
