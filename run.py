@@ -30,12 +30,12 @@ def main():
             user_choices.append(user_input)
             while user_input in computer_word:
                 correct_guesses.append(user_input)
-                new_word = [char if char in correct_guesses else "_ " for char in word]
-                print("New Word: " + " ".join(new_word))
                 computer_word.remove(user_input)
-                print(f"Correct letters : {correct_guesses}")
-                print(f"user_choices are : {user_choices}")
-                print(images[lives])
+            print(f"Correct letters : {correct_guesses}")
+            print(f"user_choices are : {user_choices}")
+            print(images[lives])
+            new_word = [char if char in correct_guesses else "_ " for char in word]
+            print("New Word: " + " ".join(new_word))
         else:
             print("Hard luck")
             user_choices.append(user_input)
