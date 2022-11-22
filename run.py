@@ -6,21 +6,27 @@ import random
 words = ["bobnoonb", "worllldorq", "helloooooooeh"]
 word = random.choice(words).upper()
 computer_word = list(word)
-images = ["Hanged", "_____", "two", "Three", "Four","Five","All lives left"]
+images = ["Hanged", "_____", "two", "Three", "Four", "Five", "All lives left"]
 user_choices = []
 correct_guesses = []
 
 
 def get_input():
     """
-    Function to check if user input is a letter and if so return it in uppercase
+    Function to check if user input is a valid letter and if so return it
+    in uppercase, if not ask for another letter
     """
     guess = input("\nEnter a letter: ").upper()
     if guess.isalpha() and guess not in user_choices:
+        user_choices.append(guess)
         return guess
+    elif guess.isalpha() and guess in user_choices:
+        print("You've already picked that letter. Please try again.")
+        get_input()
     else:
-        print("Please enter again:")
-            
+        print("That's not a letter! Please try again")
+        get_input()
+
 
 def main():
     """
@@ -33,11 +39,9 @@ def main():
     new_word = [char if char in correct_guesses else "_ " for char in word]
     print(" ".join(new_word))
     while lives > 0 and len(computer_word) != 0:
-        # user_input = input("\nEnter a letter: ")
         user_input = get_input()
         if user_input in computer_word:
             print(f"Well Done {computer_word}")
-            user_choices.append(user_input)
             while user_input in computer_word:
                 correct_guesses.append(user_input)
                 computer_word.remove(user_input)
@@ -48,7 +52,6 @@ def main():
             print("New Word: " + " ".join(new_word))
         else:
             print("Hard luck")
-            user_choices.append(user_input)
             print(f"User_choices are {user_choices}")
             lives -= 1
             print(f"You have {lives} lives left")
