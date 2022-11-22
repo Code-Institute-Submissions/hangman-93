@@ -33,6 +33,15 @@ def get_input():
             continue
 
 
+def display_word():
+    """
+    Function to display hidden word in a line of dashes
+    """
+    new_word = [char if char in correct_guesses else "_ " for char in word]
+    print()
+    print(" ".join(new_word))
+
+
 def main():
     """
     Function to print dashes for amount of letters in a word,
@@ -41,9 +50,7 @@ def main():
     """
     print("\nWelcome to Hangman! \nYou have 6 attempts to guess the write letters in the word")
     lives = 6
-    new_word = [char if char in correct_guesses else "_ " for char in word]
-    print()
-    print(" ".join(new_word))
+    display_word()
     while lives > 0 and len(computer_word) != 0:
         user_input = get_input()
         if user_input in computer_word:
@@ -54,18 +61,17 @@ def main():
             print(f"Correct letters : {set(correct_guesses)}")
             print(f"User Choices are : {user_choices}")
             print(images[lives])
-            new_word = [char if char in correct_guesses else "_ " for char in word]
-            print("New Word: " + " ".join(new_word))
+            display_word()
         else:
-            print(f"Hard luck {user_input} was not in the word...")
+            print(f"\nHard luck {user_input} was not in the word...")
             print(f"User Choices are {user_choices}")
             lives -= 1
             print(f"You have {lives} lives left")
-            print("New Word: " + " ".join(new_word))
+            display_word()
             print(images[lives])
     if len(computer_word) == 0:
         print("Winner")
-        print("The word was : "+" ".join(new_word))
+        print("The word was : "+" "+word)
         print(images[lives])
     else:
         print("Game over")
