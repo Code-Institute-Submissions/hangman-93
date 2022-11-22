@@ -1,18 +1,22 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
-Welcome Forgottenit,
+Welcome to Hangman,
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+This is a Python terminal version of Hangman. It runs in the Code Institute mock terminal. 
 
-## Reminders
+The User is given a certain amount of attempts to try guess letters in a hidden word picked by the computer.
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+You can read more about Hangman on [Wikipedia](https://en.wikipedia.org/wiki/Hangman_(game))
 
-## Creating the Heroku app
+## How to Play
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+* The user starts with 6 livesThe Computer picks a word and displays blanks (_'s) to the user to signify the amount of letters in the word
+* The User is then asked to try guess a letter that is in the word
+* If the User's guess is in the word, the computer displays the letter (or letters if there are multiple instances) of the letter in place of the blanks. If it is not in the word, the user loses a life.
+* The User keeps guessing until they have guessed all the correct letters (They win) or runs out of lives/attempts (They lose)
+
+## Flow Chart for Hangman
+
+<img src="Docs/flowchart.png">
 
 1. `heroku/python`
 2. `heroku/nodejs`

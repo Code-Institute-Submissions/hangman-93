@@ -8,6 +8,7 @@ word = random.choice(words)
 computer_word = list(word)
 images = ["Hanged", "_____", "two", "Three", "Four", "All lives left"]
 
+
 def main():
     """
     test function to print dashes for amount of letters in a word,
