@@ -1,7 +1,6 @@
 import random
 from words import WORDS
 
-
 IMAGES = ["Hanged", "_____", "two", "Three", "Four", "Five", "All lives left"]
 
 
