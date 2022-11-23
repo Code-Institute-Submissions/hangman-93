@@ -1,6 +1,6 @@
 import random
+from words import WORDS
 
-WORDS = ["bobnoonb", "worllldorq", "Helloooooooeh"]
 IMAGES = ["Hanged", "_____", "two", "Three", "Four", "Five", "All lives left"]
 
 
