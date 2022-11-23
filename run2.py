@@ -1,5 +1,6 @@
 import random
 from words import WORDS
+from testwords import testwords
 
 IMAGES = ["Hanged", "_____", "two", "Three", "Four", "Five", "All lives left"]
 
@@ -8,7 +9,12 @@ def get_word():
     """
     Function that gets computer to choose a random word
     """
-    word = random.choice(WORDS).upper()
+   
+    word = random.choice(testwords).upper()
+
+    while any(not chr.isalpha() for chr in word):
+        print(word)
+        word = random.choice(testwords).upper()
     return word
 
 
@@ -81,7 +87,8 @@ class Game:
 
     def check_finished(self):
         """
-        Check if the user has finished the game, either by guessing all letters or having no more lives
+        Check if the user has finished the game, either by guessing all
+        letters or having no more lives
         """
         if len(self.computer_word) == 0:
             print("Winner")
