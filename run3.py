@@ -108,7 +108,7 @@ class Game:
         Check if the user has finished the game, either by guessing all
         letters or having no more lives
         """
-        if len(self.computer_word) == 0:
+        if not re.search('[a-zA-Z]', str(self.computer_word)):
             print("Winner")
             print("The word was : "+" "+self.word)
             print(IMAGES[self.lives])
