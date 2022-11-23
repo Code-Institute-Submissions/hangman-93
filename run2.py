@@ -48,7 +48,33 @@ class Game:
         print()
         print(" ".join(new_word))
 
+    def check_letters(self):
+        """
+        Check whether the user input is in the word and display accordingly
+        """
+        while self.lives > 0 and len(self.computer_word) != 0:
+            user_input = self.get_input()
+            if user_input in self.computer_word:
+                print(f"Well Done {user_input} was in the word!")
+                while user_input in self.computer_word:
+                    correct_guesses.append(user_input)
+                    self.computer_word.remove(user_input)
+                print(f"Correct letters : {set(correct_guesses)}")
+                print(f"User Choices are : {user_choices}")
+                print(images[self.lives])
+                self.display_word()
+            else:
+                print(f"\nHard luck {user_input} was not in the word...")
+                print(f"User Choices are {user_choices}")
+                self.lives -= 1
+                print(f"You have {self.lives} lives left")
+                self.display_word()
+                print(images[self.lives])
+
     def check_finished(self):
+        """
+        Check if the user has finished the game, either by guessing all letters or having no more lives
+        """
         if len(self.computer_word) == 0:
             print("Winner")
             print("The word was : "+" "+self.word)
@@ -57,6 +83,7 @@ class Game:
             print("Game over")
             print("The Word was :" + self.word)
             print(images[self.lives])
+
 
 
 def main():
@@ -68,25 +95,7 @@ def main():
     print("\nWelcome to Hangman! \nYou have 6 attempts to guess the correct letters in the word")
     play = Game()
     play.display_word()
-    
-    while play.lives > 0 and len(play.computer_word) != 0:
-        user_input = play.get_input()
-        if user_input in play.computer_word:
-            print(f"Well Done {user_input} was in the word!")
-            while user_input in play.computer_word:
-                correct_guesses.append(user_input)
-                play.computer_word.remove(user_input)
-            print(f"Correct letters : {set(correct_guesses)}")
-            print(f"User Choices are : {user_choices}")
-            print(images[play.lives])
-            play.display_word()
-        else:
-            print(f"\nHard luck {user_input} was not in the word...")
-            print(f"User Choices are {user_choices}")
-            play.lives -= 1
-            print(f"You have {play.lives} lives left")
-            play.display_word()
-            print(images[play.lives])
+    play.check_letters()
     play.check_finished()
    
 
