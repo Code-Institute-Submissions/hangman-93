@@ -7,32 +7,17 @@ from filmtest import filmtest
 
 IMAGES = ["Hanged", "_____", "two", "Three", "Four", "Five", "All lives left"]
 
-# def get_word():
-#     """
-#     Function that gets computer to choose a random word
-#     """
-
-#     word = random.choice(WORDS).upper()
-
-#     while any(not chr.isalpha() for chr in word):
-#         print(word)
-#         word = random.choice(WORDS).upper()
-#     return word
-
 
 def get_word():
     """
     Function that gets computer to choose a random word
     """
 
-    word = random.choice(filmtest).upper()
+    word = random.choice(films).upper()
 
     while any(not chr.isalpha() for chr in word):
-        if re.search('[a-zA-Z]', word):
-            print(f"RE SEARCH {word}")
         word = word.replace(" ", "-")
-        print(word)
-        # word = random.choice(films).upper()
+        
         return word
 
 
