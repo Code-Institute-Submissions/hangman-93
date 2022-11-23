@@ -37,8 +37,7 @@ films = [
     'Saving Private Ryan',
     'Memento',
     'City Lights',
-    'Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb'
-        ,
+    'Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb',
     'Alien',
     'Modern Times',
     'Spirited Away',
@@ -49,7 +48,6 @@ films = [
     'The Pianist',
     'Citizen Kane',
     'The Departed',
-    'M',
     'Paths of Glory',
     'Vertigo',
     'Django Unchained',

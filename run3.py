@@ -2,7 +2,7 @@ import random
 import re
 from words import WORDS
 from films import films
-from filmtest import filmtest
+
 
 
 IMAGES = ["Hanged", "_____", "two", "Three", "Four", "Five", "All lives left"]
@@ -10,15 +10,21 @@ IMAGES = ["Hanged", "_____", "two", "Three", "Four", "Five", "All lives left"]
 
 def get_word():
     """
-    Function that gets computer to choose a random word
+    Function that gets computer to choose a random word from list and also replace 
+    spaces with dashes
     """
-
-    word = random.choice(films).upper()
+    choice = input("Pick a Category: ")
+    if choice == "1":
+        word = random.choice(WORDS).upper()
+        return word
+    else:
+        word = random.choice(films).upper()
+        return word
 
     while any(not chr.isalpha() for chr in word):
         word = word.replace(" ", "-")
         
-        return word
+    return word
 
 
 class Game:
@@ -116,4 +122,6 @@ def main():
     play.check_finished()
 
 
-main()
+if __name__ == "__main__":
+    main()
+
