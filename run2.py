@@ -1,6 +1,6 @@
 import random
 from words import WORDS
-from testwords import testwords
+
 
 IMAGES = ["Hanged", "_____", "two", "Three", "Four", "Five", "All lives left"]
 
@@ -9,12 +9,12 @@ def get_word():
     """
     Function that gets computer to choose a random word
     """
-   
-    word = random.choice(testwords).upper()
+
+    word = random.choice(WORDS).upper()
 
     while any(not chr.isalpha() for chr in word):
         print(word)
-        word = random.choice(testwords).upper()
+        word = random.choice(WORDS).upper()
     return word
 
 
