@@ -48,7 +48,7 @@ def main():
     take a user input and check if it is in the
     word the computer has chosen and print message accordingly
     """
-    print("\nWelcome to Hangman! \nYou have 6 attempts to guess the write letters in the word")
+    print("\nWelcome to Hangman! \nYou have 6 attempts to guess the correct letters in the word")
     lives = 6
     display_word()
     while lives > 0 and len(computer_word) != 0:
