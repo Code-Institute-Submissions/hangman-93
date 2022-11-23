@@ -1,9 +1,15 @@
 import random
 
-words = ["bobnoonb", "worllldorq", "helloooooooeh"]
-user_choices = []
-correct_guesses = []
-images = ["Hanged", "_____", "two", "Three", "Four", "Five", "All lives left"]
+WORDS = ["bobnoonb", "worllldorq", "Helloooooooeh"]
+IMAGES = ["Hanged", "_____", "two", "Three", "Four", "Five", "All lives left"]
+
+
+def get_word():
+    """
+    Function that gets computer to choose a random word
+    """
+    word = random.choice(WORDS).upper()
+    return word
 
 
 class Game:
@@ -11,9 +17,11 @@ class Game:
     Class that generates and displays computer choice of words and tests user input is valid
     """
     def __init__(self):
-        self.word = random.choice(words).upper()
+        self.word = get_word()
         self.computer_word = list(self.word)
         self.lives = 6
+        self.user_choices = []
+        self.correct_guesses = []
 
     def get_input(self):
         """
@@ -23,28 +31,28 @@ class Game:
         while True:
             guess = input("\nEnter a letter: ").upper()
             
-            if guess.isalpha() and guess not in user_choices and len(guess) == 1:
-                user_choices.append(guess)
+            if guess.isalpha() and guess not in self.user_choices and len(guess) == 1:
+                self.user_choices.append(guess)
                 return guess
-            elif guess.isalpha() and guess in user_choices:
+            elif guess.isalpha() and guess in self.user_choices:
                 print("You've already picked that letter. Please try again.")
-                print(f"Correct letters : {set(correct_guesses)}")
-                print(f"user_choices are : {user_choices}")
+                print(f"Correct letters : {set(self.correct_guesses)}")
+                print(f"user_choices are : {self.user_choices}")
                 continue
             elif len(guess) > 1:
                 print("Sorry, that's too many letters")
                 continue
             else:
                 print("That's not a letter! Please try again")
-                print(f"Correct letters : {set(correct_guesses)}")
-                print(f"user_choices are : {user_choices}")
+                print(f"Correct letters : {set(self.correct_guesses)}")
+                print(f"user_choices are : {self.user_choices}")
                 continue
 
     def display_word(self):
         """
         Function to display hidden word in a line of dashes
         """
-        new_word = [char if char in correct_guesses else "_ " for char in self.word]
+        new_word = [char if char in self.correct_guesses else "_ " for char in self.word]
         print()
         print(" ".join(new_word))
 
@@ -57,19 +65,19 @@ class Game:
             if user_input in self.computer_word:
                 print(f"Well Done {user_input} was in the word!")
                 while user_input in self.computer_word:
-                    correct_guesses.append(user_input)
+                    self.correct_guesses.append(user_input)
                     self.computer_word.remove(user_input)
-                print(f"Correct letters : {set(correct_guesses)}")
-                print(f"User Choices are : {user_choices}")
-                print(images[self.lives])
+                print(f"Correct letters : {set(self.correct_guesses)}")
+                print(f"User Choices are : {self.user_choices}")
+                print(IMAGES[self.lives])
                 self.display_word()
             else:
                 print(f"\nHard luck {user_input} was not in the word...")
-                print(f"User Choices are {user_choices}")
+                print(f"User Choices are {self.user_choices}")
                 self.lives -= 1
                 print(f"You have {self.lives} lives left")
                 self.display_word()
-                print(images[self.lives])
+                print(IMAGES[self.lives])
 
     def check_finished(self):
         """
@@ -78,12 +86,11 @@ class Game:
         if len(self.computer_word) == 0:
             print("Winner")
             print("The word was : "+" "+self.word)
-            print(images[self.lives])
+            print(IMAGES[self.lives])
         else:
             print("Game over")
             print("The Word was :" + self.word)
-            print(images[self.lives])
-
+            print(IMAGES[self.lives])
 
 
 def main():
@@ -97,6 +104,6 @@ def main():
     play.display_word()
     play.check_letters()
     play.check_finished()
-   
+
 
 main()
