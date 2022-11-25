@@ -33,3 +33,11 @@ The deployment terminal is set to 80 columns by 24 rows. That means that each li
 
 -----
 Happy coding!
+
+## Acknowledgements 
+* https://wtools.io/convert-list-to-json-array for converting lists to json format
+* https://www.britannica.com/topic/list-of-countries-1993160 for list of countries
+* https://www.theguardian.com/news/datablog/2012/nov/04/uk-million-selling-singles-full-list#data for song list
+* https://www.imdb.com/list/ls055592025/ for film list
+* https://www.randomlists.com/ for random list of words
+* https://en.wikipedia.org/wiki/List_of_best-selling_books for list of books
