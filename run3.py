@@ -1,5 +1,6 @@
 import random
 import re
+import importlib
 
 IMAGES = ["Hanged", "_____", "two", "Three", "Four", "Five", "All lives left"]
 
@@ -15,31 +16,18 @@ def get_word():
     print("3. Choose 3 for Book titles")
     print("4. Choose 4 for Song titles")
     print("5. Choose 5 for Countries")
+    categories = ["random", "words", "films", "books", "songs", "countries"]
     while True:
-        choice = input("Pick a Category: ")
-        if choice == "1":
-            from words import WORDS
-            word = random.choice(WORDS).upper()
-            return word
-        elif choice == "2":
-            from films import films
-            word = random.choice(films).upper()
-            return word
-        elif choice == "3":
-            from books import BOOKS
-            word = random.choice(BOOKS).upper()
-            return word
-        elif choice == "4":
-            from songs import SONGS
-            word = random.choice(SONGS).upper()
-            return word
-        elif choice == "5":
-            from countries import COUNTRIES
-            word = random.choice(COUNTRIES).upper()
-            return word
-        else:
-            print("Sorry, that's not a vaild choice. Please pick a category")
-            continue
+        category_choice = int(input("Pick a Category: "))
+        selection = categories[category_choice]
+        module = importlib.import_module(selection)
+        word = random.choice(module.choices).upper()
+        print(word)
+        return word
+       
+        # else:
+        #     print("Sorry, that's not a vaild choice. Please pick a category")
+        #     continue
 
 
     while any(not chr.isalpha() for chr in word):
