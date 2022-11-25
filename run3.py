@@ -16,14 +16,26 @@ def get_word():
     print("3. Choose 3 for Book titles")
     print("4. Choose 4 for Song titles")
     print("5. Choose 5 for Countries")
+    print("6. Choose 6 to let the computer pick")
     categories = ["random", "words", "films", "books", "songs", "countries"]
     while True:
-        category_choice = int(input("Pick a Category: "))
-        selection = categories[category_choice]
-        module = importlib.import_module(selection)
-        word = random.choice(module.choices).upper()
-        print(word)
-        return word
+        category_choice = input("Pick a Category: ")
+        if category_choice.isdigit():
+            if int(category_choice) == 6:
+                selection = random.choice(categories)
+                module = importlib.import_module(selection)
+                word = random.choice(module.choices).upper()
+                print(word)
+                return word
+            elif category_choice >= 1 and category_choice < 6:
+                selection = categories[int(category_choice)]
+                module = importlib.import_module(selection)
+                word = random.choice(module.choices).upper()
+                print(word)
+                return word
+        else:
+            print("Sorry, that's not a vaild choice. Please pick a category")
+            continue
        
         # else:
         #     print("Sorry, that's not a vaild choice. Please pick a category")
