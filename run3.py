@@ -1,7 +1,6 @@
 import random
 import re
-from words import WORDS
-from films import films
+
 
 
 
@@ -15,9 +14,11 @@ def get_word():
     """
     choice = input("Pick a Category: ")
     if choice == "1":
+        from words import WORDS
         word = random.choice(WORDS).upper()
         return word
     else:
+        from films import films
         word = random.choice(films).upper()
         return word
 
