@@ -9,12 +9,12 @@ def get_word():
     Function that gets computer to choose a random word from list and also replace 
     spaces with dashes
     """
-    print("Welcome to Hangman")
+    
     print("You can choose what category you would like your word from:")
     print("1. Choose 1 for random Words")
     print("2. Choose 2 for Film titles")
     print("3. Choose 3 for Book titles")
-    print("4. Choose 4 for Song titles")
+    print("4. Choose 4 for Music Singles titles")
     print("5. Choose 5 for Countries")
     print("6. Choose 6 to let the computer pick")
     categories = ["random", "words", "films", "books", "songs", "countries"]
