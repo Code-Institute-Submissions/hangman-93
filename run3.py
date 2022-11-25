@@ -25,13 +25,13 @@ def get_word():
                 selection = random.choice(categories)
                 module = importlib.import_module(selection)
                 word = random.choice(module.choices).upper()
-                print(word)
+                print(f"The Computer has chosen: {selection}")
                 return word
-            elif category_choice >= 1 and category_choice < 6:
+            elif int(category_choice) >= 1 and int(category_choice) < 6:
                 selection = categories[int(category_choice)]
                 module = importlib.import_module(selection)
                 word = random.choice(module.choices).upper()
-                print(word)
+                print(f"You have chosen: {selection}")
                 return word
         else:
             print("Sorry, that's not a vaild choice. Please pick a category")
