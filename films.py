@@ -1,4 +1,4 @@
-films = [
+FILMS = [
     'The Shawshank Redemption',
     'The Godfather',
     'The Godfather: Part II',

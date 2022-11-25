@@ -1,26 +1,46 @@
 import random
 import re
 
-
-
-
 IMAGES = ["Hanged", "_____", "two", "Three", "Four", "Five", "All lives left"]
-
 
 def get_word():
     """
     Function that gets computer to choose a random word from list and also replace 
     spaces with dashes
     """
-    choice = input("Pick a Category: ")
-    if choice == "1":
-        from words import WORDS
-        word = random.choice(WORDS).upper()
-        return word
-    else:
-        from films import films
-        word = random.choice(films).upper()
-        return word
+    print("Welcome to Hangman")
+    print("You can choose what category you would like your word from:")
+    print("1. Choose 1 for random Words")
+    print("2. Choose 2 for Film titles")
+    print("3. Choose 3 for Book titles")
+    print("4. Choose 4 for Song titles")
+    print("5. Choose 5 for Countries")
+    while True:
+        choice = input("Pick a Category: ")
+        if choice == "1":
+            from words import WORDS
+            word = random.choice(WORDS).upper()
+            return word
+        elif choice == "2":
+            from films import films
+            word = random.choice(films).upper()
+            return word
+        elif choice == "3":
+            from books import BOOKS
+            word = random.choice(BOOKS).upper()
+            return word
+        elif choice == "4":
+            from songs import SONGS
+            word = random.choice(SONGS).upper()
+            return word
+        elif choice == "5":
+            from countries import COUNTRIES
+            word = random.choice(COUNTRIES).upper()
+            return word
+        else:
+            print("Sorry, that's not a vaild choice. Please pick a category")
+            continue
+
 
     while any(not chr.isalpha() for chr in word):
         word = word.replace(" ", "-")
