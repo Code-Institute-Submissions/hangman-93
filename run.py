@@ -1,45 +1,133 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
 import random
+import re
+import importlib
 
-words = ["bobnoonb", "worllldorq", "helloooooooeh"]
-word = random.choice(words).upper()
-computer_word = list(word)
-images = ["Hanged", "_____", "two", "Three", "Four", "Five", "All lives left"]
-user_choices = []
-correct_guesses = []
+IMAGES = ["Hanged", "_____", "two", "Three", "Four", "Five", "All lives left"]
 
-
-def get_input():
+def get_word():
     """
-    Function to check if user input is a valid letter and if so return it
-    in uppercase, if not ask for another letter
+    Function that gets computer to choose a random word from list and also replace 
+    spaces with dashes
     """
+    
+    print("You can choose what category you would like your word from:")
+    print("1. Choose 1 for random Words")
+    print("2. Choose 2 for Film titles")
+    print("3. Choose 3 for Book titles")
+    print("4. Choose 4 for Music Singles titles")
+    print("5. Choose 5 for Countries")
+    print("6. Choose 6 to let the computer pick")
+    categories = ["random", "words", "films", "books", "songs", "countries"]
     while True:
-        guess = input("\nEnter a letter: ").upper()
-        if guess.isalpha() and guess not in user_choices:
-            user_choices.append(guess)
-            return guess
-        elif guess.isalpha() and guess in user_choices:
-            print("You've already picked that letter. Please try again.")
-            print(f"Correct letters : {set(correct_guesses)}")
-            print(f"user_choices are : {user_choices}")
-            continue
+        category_choice = input("Pick a Category: ")
+        if category_choice.isdigit():
+            if int(category_choice) == 6:
+                selection = random.choice(categories)
+                module = importlib.import_module(selection)
+                word = random.choice(module.choices).upper()
+                print(f"The Computer has chosen: {selection}")
+                return word
+            elif int(category_choice) >= 1 and int(category_choice) < 6:
+                selection = categories[int(category_choice)]
+                module = importlib.import_module(selection)
+                word = random.choice(module.choices).upper()
+                print(f"You have chosen: {selection}")
+                return word
         else:
-            print("That's not a letter! Please try again")
-            print(f"Correct letters : {set(correct_guesses)}")
-            print(f"user_choices are : {user_choices}")
+            print("Sorry, that's not a vaild choice. Please pick a category")
             continue
+       
+        # else:
+        #     print("Sorry, that's not a vaild choice. Please pick a category")
+        #     continue
 
 
-def display_word():
+    while any(not chr.isalpha() for chr in word):
+        word = word.replace(" ", "-")
+        
+    return word
+
+
+class Game:
     """
-    Function to display hidden word in a line of dashes
+    Class that generates and displays computer choice of words and tests user input is valid
     """
-    new_word = [char if char in correct_guesses else "_ " for char in word]
-    print()
-    print(" ".join(new_word))
+    def __init__(self):
+        self.word = get_word()
+        self.computer_word = list(self.word)
+        self.lives = 6
+        self.user_choices = []
+        self.correct_guesses = []
+
+    def get_input(self):
+        """
+        Function to check if user input is a valid letter and if so return it
+        in uppercase, if not ask for another letter
+        """
+        while True:
+            guess = input("\nEnter a letter: ").upper()
+            
+            if guess.isalpha() and guess not in self.user_choices and len(guess) == 1:
+                self.user_choices.append(guess)
+                return guess
+            elif guess.isalpha() and guess in self.user_choices:
+                print("You've already picked that letter. Please try again.")
+                print(f"Correct letters : {set(self.correct_guesses)}")
+                print(f"user_choices are : {self.user_choices}")
+                continue
+            elif len(guess) > 1:
+                print("Sorry, that's too many letters")
+                continue
+            else:
+                print("That's not a letter! Please try again")
+                print(f"Correct letters : {set(self.correct_guesses)}")
+                print(f"user_choices are : {self.user_choices}")
+                continue
+
+    def display_word(self):
+        """
+        Function to display hidden word in a line of dashes
+        """
+        new_word = [char if char in self.correct_guesses or not char.isalpha() else "_ " for char in self.word]
+        print()
+        print(" ".join(new_word))
+
+    def check_letters(self):
+        """
+        Check whether the user input is in the word and display accordingly
+        """
+        while self.lives > 0 and len(self.computer_word) != 0 and re.search('[a-zA-Z]', str(self.computer_word)):
+            user_input = self.get_input()
+            if user_input in self.computer_word:
+                print(f"Well Done {user_input} was in the word!")
+                while user_input in self.computer_word:
+                    self.correct_guesses.append(user_input)
+                    self.computer_word.remove(user_input)
+                print(f"Correct letters : {set(self.correct_guesses)}")
+                print(f"User Choices are : {self.user_choices}")
+                print(IMAGES[self.lives])
+                self.display_word()
+            else:
+                print(f"\nHard luck {user_input} was not in the word...")
+                print(f"User Choices are {self.user_choices}")
+                self.lives -= 1
+                print(f"You have {self.lives} lives left")
+                self.display_word()
+                print(IMAGES[self.lives])
+
+    def check_finished(self):
+        """
+        Check if the user has finished the game, either by guessing all
+        letters or having no more lives
+        """
+        if not re.search('[a-zA-Z]', str(self.computer_word)):
+            print("Winner")
+            print("The word was : "+" "+self.word)
+            print(IMAGES[self.lives])
+        else:
+            print("Game over")
+            print("The Word was :" + self.word)
+            print(IMAGES[self.lives])
 
 
 def main():
@@ -49,34 +137,12 @@ def main():
     word the computer has chosen and print message accordingly
     """
     print("\nWelcome to Hangman! \nYou have 6 attempts to guess the correct letters in the word")
-    lives = 6
-    display_word()
-    while lives > 0 and len(computer_word) != 0:
-        user_input = get_input()
-        if user_input in computer_word:
-            print(f"Well Done {user_input} was in the word!")
-            while user_input in computer_word:
-                correct_guesses.append(user_input)
-                computer_word.remove(user_input)
-            print(f"Correct letters : {set(correct_guesses)}")
-            print(f"User Choices are : {user_choices}")
-            print(images[lives])
-            display_word()
-        else:
-            print(f"\nHard luck {user_input} was not in the word...")
-            print(f"User Choices are {user_choices}")
-            lives -= 1
-            print(f"You have {lives} lives left")
-            display_word()
-            print(images[lives])
-    if len(computer_word) == 0:
-        print("Winner")
-        print("The word was : "+" "+word)
-        print(images[lives])
-    else:
-        print("Game over")
-        print("The Word was :" + word)
-        print(images[lives])
+    play = Game()
+    play.display_word()
+    play.check_letters()
+    play.check_finished()
 
 
-main()
+if __name__ == "__main__":
+    main()
+
