@@ -20,7 +20,7 @@ def get_word():
     print("6. Choose 6 to let the computer pick")
     categories = ["words", "films", "books", "songs", "countries"]
     while True:
-        category_choice = input("Pick a Category: ")
+        category_choice = input("Pick a Category: \n")
         if category_choice.isdigit() and int(category_choice) >= 1 and int(category_choice) < 6:
             selection = categories[int(category_choice) - 1]
             module = importlib.import_module(selection)
@@ -61,7 +61,7 @@ class Game:
         in uppercase, if not ask for another letter
         """
         while True:
-            guess = input("\nEnter a letter: ").upper()
+            guess = input("\nEnter a letter: \n").upper()
 
             if guess.isalpha() and guess not in self.user_choices and len(guess) == 1:
                 self.user_choices.append(guess)
