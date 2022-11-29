@@ -7,8 +7,8 @@ IMAGES = ["Hanged", "_____", "two", "Three", "Four", "Five", "All lives left"]
 
 def get_word():
     """
-    Function that gets computer to choose a random word from list and also replace 
-    spaces with dashes
+    Function that gets computer to choose a random word from list
+    and also replace spaces with dashes
     """
 
     print("You can choose what category you would like your word from:")
@@ -132,7 +132,8 @@ def main():
     take a user input and check if it is in the
     word the computer has chosen and print message accordingly
     """
-    print("\nWelcome to Hangman! \nYou have 6 attempts to guess the correct letters in the word")
+    print("\nWelcome to Hangman!")
+    print("\nYou have 6 attempts to guess the correct letters in the word")
     play = Game()
     play.display_word()
     play.check_letters()
