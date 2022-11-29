@@ -4,14 +4,15 @@ import importlib
 
 IMAGES = ["Hanged", "_____", "two", "Three", "Four", "Five", "All lives left"]
 
+
 def get_word():
     """
     Function that gets computer to choose a random word from list and also replace 
     spaces with dashes
     """
-    
+
     print("You can choose what category you would like your word from:")
-    print("1. Choose 1 for random Words")
+    print("1. Choose 1 for Random Words")
     print("2. Choose 2 for Film titles")
     print("3. Choose 3 for Book titles")
     print("4. Choose 4 for Music Singles titles")
@@ -35,21 +36,17 @@ def get_word():
         else:
             print("Sorry, that's not a vaild choice. Please pick another category")
             continue
-       
-        # else:
-        #     print("Sorry, that's not a vaild choice. Please pick a category")
-        #     continue
-
 
     while any(not chr.isalpha() for chr in word):
         word = word.replace(" ", "-")
-        
+
     return word
 
 
 class Game:
     """
-    Class that generates and displays computer choice of words and tests user input is valid
+    Class that generates and displays computer
+    choice of words and tests user input is valid
     """
     def __init__(self):
         self.word = get_word()
@@ -65,7 +62,7 @@ class Game:
         """
         while True:
             guess = input("\nEnter a letter: ").upper()
-            
+
             if guess.isalpha() and guess not in self.user_choices and len(guess) == 1:
                 self.user_choices.append(guess)
                 return guess
@@ -144,4 +141,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
