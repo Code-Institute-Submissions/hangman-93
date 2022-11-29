@@ -17,7 +17,7 @@ def get_word():
     print("4. Choose 4 for Music Singles titles")
     print("5. Choose 5 for Countries")
     print("6. Choose 6 to let the computer pick")
-    categories = ["random", "words", "films", "books", "songs", "countries"]
+    categories = ["words", "films", "books", "songs", "countries"]
     while True:
         category_choice = input("Pick a Category: ")
         if category_choice.isdigit():
@@ -28,13 +28,13 @@ def get_word():
                 print(f"The Computer has chosen: {selection}")
                 return word
             elif int(category_choice) >= 1 and int(category_choice) < 6:
-                selection = categories[int(category_choice)]
+                selection = categories[int(category_choice) + 1]
                 module = importlib.import_module(selection)
                 word = random.choice(module.choices).upper()
                 print(f"You have chosen: {selection}")
                 return word
         else:
-            print("Sorry, that's not a vaild choice. Please pick a category")
+            print("Sorry, that's not a vaild choice. Please pick another category")
             continue
        
         # else:
