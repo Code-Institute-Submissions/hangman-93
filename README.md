@@ -29,7 +29,8 @@ Connect your GitHub repository and deploy as normal.
 
 ## Constraints
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+* The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+* A "\n" symbol had to be inserted at the end if user input print outs due to a quirk in the terminal interface.
 
 -----
 Happy coding!
