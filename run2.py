@@ -118,24 +118,23 @@ class Game:
         """
         while self.lives > 0 and len(self.computer_letters) != 0 and re.search('[a-zA-Z]', str(self.computer_letters)):
             user_input = self.get_input()
+            clear_screen()
+            print(self.images[self.lives])
             if user_input in self.computer_letters:
-                print(f"Well Done {user_input} was in the word!")
                 while user_input in self.computer_letters:
                     self.correct_guesses.append(user_input)
                     self.computer_letters.remove(user_input)
-                clear_screen()
+                print(f"Well Done {user_input} was in the word!")
                 print(f"Correct letters : {set(self.correct_guesses)}")
                 print(f"User Choices are : {self.user_choices}")
-                print(self.images[self.lives])
                 self.display_word()
             else:
-                print(f"\nHard luck {user_input} was not in the word...")
+                print(f"Hard luck {user_input} was not in the word...")
                 print(f"User Choices are {self.user_choices}")
                 self.lives -= 1
                 print(f"You have {self.lives} lives left")
-                clear_screen()
                 self.display_word()
-                print(self.images[self.lives])
+
 
     def check_finished(self):
         """
