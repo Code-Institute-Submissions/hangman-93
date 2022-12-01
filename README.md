@@ -42,3 +42,5 @@ Happy coding!
 * https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies for film list
 * https://www.randomlists.com/ for random list of words
 * https://en.wikipedia.org/wiki/List_of_best-selling_books for list of books
+* https://www.scaler.com/topics/how-to-clear-screen-in-python/ for info on how to Clear User Screen depending 
+  on operating System 

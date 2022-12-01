@@ -1,9 +1,19 @@
 import random
 import re
 import importlib
+import os
+from time import sleep
 
 
 categories = ["words", "films", "books", "songs", "countries"]
+
+
+def clear_screen():
+    if (os.name == 'posix'):
+        os.system('clear')
+    else:
+        os.system('cls')
+    
 
 
 def get_category_input():
@@ -113,6 +123,7 @@ class Game:
                 while user_input in self.computer_letters:
                     self.correct_guesses.append(user_input)
                     self.computer_letters.remove(user_input)
+                clear_screen()
                 print(f"Correct letters : {set(self.correct_guesses)}")
                 print(f"User Choices are : {self.user_choices}")
                 print(self.images[self.lives])
@@ -122,6 +133,7 @@ class Game:
                 print(f"User Choices are {self.user_choices}")
                 self.lives -= 1
                 print(f"You have {self.lives} lives left")
+                clear_screen()
                 self.display_word()
                 print(self.images[self.lives])
 
