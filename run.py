@@ -26,9 +26,8 @@ def get_word():
             selection = categories[int(category_choice) - 1]
             module = importlib.import_module(selection)
             word = random.choice(module.choices).upper()
-            
             print(f"You have chosen: {selection}")
-            return word, IMAGES
+            return word
         elif int(category_choice) == 6:
             selection = random.choice(categories)
             module = importlib.import_module(selection)
