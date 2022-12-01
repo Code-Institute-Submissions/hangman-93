@@ -4,6 +4,7 @@ import importlib
 
 IMAGES = ["Hanged", "_____", "two", "Three", "Four", "Five", "All lives left"]
 
+# Need to break function in to one to get category, then one to get word, one to get art etc.
 
 def get_word():
     """
@@ -25,8 +26,9 @@ def get_word():
             selection = categories[int(category_choice) - 1]
             module = importlib.import_module(selection)
             word = random.choice(module.choices).upper()
+            
             print(f"You have chosen: {selection}")
-            return word
+            return word, IMAGES
         elif int(category_choice) == 6:
             selection = random.choice(categories)
             module = importlib.import_module(selection)
