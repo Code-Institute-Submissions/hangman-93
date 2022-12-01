@@ -9,11 +9,14 @@ categories = ["words", "films", "books", "songs", "countries"]
 
 
 def clear_screen():
-    if (os.name == 'posix'):
+    """
+    Function to clear users screen depending on os
+    ("clear" for posix (linux/Mac) otherwise "cls" is used for windows)
+    """
+    if os.name == 'posix':
         os.system('clear')
     else:
         os.system('cls')
-    
 
 
 def get_category_input():
@@ -79,62 +82,57 @@ class Game:
         self.user_choices = []
         self.correct_guesses = []
 
+    def display_status(self):
+        print(f"Correct letters : {set(self.correct_guesses)}")
+        print(f"user_choices are : {self.user_choices}")
+        print(self.images[self.lives])
+        print(f"You have {self.lives} lives left")
+        new_word = [char if char in self.correct_guesses or not char.isalpha() else "_ " for char in self.word]
+        print(" ".join(new_word))
+
     def get_input(self):
         """
         Function to check if user input is a valid letter and if so return it
         in uppercase, if not ask for another letter
         """
         while True:
+            self.display_status()
             guess = input("\nEnter a letter: \n").upper()
-
             if guess.isalpha() and guess not in self.user_choices and len(guess) == 1:
+                clear_screen()
                 self.user_choices.append(guess)
                 return guess
             elif guess.isalpha() and guess in self.user_choices:
+                clear_screen()
                 print("You've already picked that letter. Please try again.")
-                print(f"Correct letters : {set(self.correct_guesses)}")
-                print(f"user_choices are : {self.user_choices}")
                 continue
             elif len(guess) > 1:
+                clear_screen()
                 print("Sorry, that's too many letters")
                 continue
             else:
+                clear_screen()
                 print("That's not a letter! Please try again")
-                print(f"Correct letters : {set(self.correct_guesses)}")
-                print(f"user_choices are : {self.user_choices}")
                 continue
-
-    def display_word(self):
-        """
-        Function to display hidden word in a line of dashes
-        """
-        new_word = [char if char in self.correct_guesses or not char.isalpha() else "_ " for char in self.word]
-        print()
-        print(" ".join(new_word))
 
     def check_letters(self):
         """
         Check whether the user input is in the word and display accordingly
         """
+        clear_screen()
         while self.lives > 0 and len(self.computer_letters) != 0 and re.search('[a-zA-Z]', str(self.computer_letters)):
             user_input = self.get_input()
             clear_screen()
-            print(self.images[self.lives])
             if user_input in self.computer_letters:
                 while user_input in self.computer_letters:
                     self.correct_guesses.append(user_input)
                     self.computer_letters.remove(user_input)
+                clear_screen()
                 print(f"Well Done {user_input} was in the word!")
-                print(f"Correct letters : {set(self.correct_guesses)}")
-                print(f"User Choices are : {self.user_choices}")
-                self.display_word()
             else:
+                clear_screen()
                 print(f"Hard luck {user_input} was not in the word...")
-                print(f"User Choices are {self.user_choices}")
                 self.lives -= 1
-                print(f"You have {self.lives} lives left")
-                self.display_word()
-
 
     def check_finished(self):
         """
@@ -160,7 +158,7 @@ def main():
     print("\nWelcome to Hangman!")
     print("\nYou have 6 attempts to guess the correct letters in the word")
     play = Game()
-    play.display_word()
+    play.display_status()
     play.check_letters()
     play.check_finished()
 
