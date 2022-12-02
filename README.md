@@ -32,8 +32,16 @@ Connect your GitHub repository and deploy as normal.
 * The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
 * A "\n" symbol had to be inserted at the end if user input print outs due to a quirk in the terminal interface.
 
------
-Happy coding!
+## Deployment
+
+1. Go to Heroku website and Click Create New App
+2. Name the App and set the region
+3. Go to Settings and, Click Reveal Config Vars and set keys to PORT and value to 8000
+4. Click Add Buildpacks, add Python, save changes.
+5. Click Add Buildpacks, add Node.js
+6. Navigate to the Deploy section. Select GitHub from the Deployment Method section, connnect and Authorise when prompted.
+7. Select the repo name (in this case, hangman), connect and Enable Automatic Deploys.
+8. Then click Open App to run the App in the Code Institute Terminal
 
 ## Acknowledgements 
 * https://wtools.io/convert-list-to-json-array for converting lists to json format
