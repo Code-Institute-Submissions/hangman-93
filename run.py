@@ -31,26 +31,20 @@ def get_category_input():
     print("4. Choose 4 for Music Singles titles")
     print("5. Choose 5 for Countries")
     print("6. Choose 6 to let the computer pick")
-    category_choice = input("Pick a Category: \n")
-    return category_choice
-
-
-def get_category():
-    """
-    Function that imports the category the user has picked and return the value
-    """
+    
     while True:
-        category_choice = get_category_input()
-        if category_choice.isdigit() and int(category_choice) >= 1 and int(category_choice) < 6:
-            selection = categories[int(category_choice) - 1]
-            module = importlib.import_module(selection)
-            print(f"You have chosen: {selection}")
-            return module
-        elif int(category_choice) == 6:
-            selection = random.choice(categories)
-            module = importlib.import_module(selection)
-            print(f"The Computer has chosen: {selection}")
-            return module
+        category_choice = input("Pick a Category: \n")
+        if category_choice.isdigit():
+            if int(category_choice) >= 1 and int(category_choice) < 6:
+                selection = categories[int(category_choice) - 1]
+                module = importlib.import_module(selection)
+                print(f"You have chosen: {selection}")
+                return module
+            elif int(category_choice) == 6:
+                selection = random.choice(categories)
+                module = importlib.import_module(selection)
+                print(f"The Computer has chosen: {selection}")
+                return module
         else:
             print("Sorry, that's not a vaild choice.")
             print("Please pick another category")
@@ -63,7 +57,7 @@ def get_word():
     the corresponding images, if the word contains spaces,
     the spaces are replaced with "-"'s
     """
-    module = get_category()
+    module = get_category_input()
     word = random.choice(module.choices).upper()
     images = module.IMAGES
     while any(not chr.isalpha() for chr in word):
