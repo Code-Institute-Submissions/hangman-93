@@ -58,8 +58,9 @@ def get_category():
 
 def get_word():
     """
-    Function to get a random word from the user picked category and also get the corresponding images, 
-    if the word contains spaces, the spaces are replaced with "-"'s
+    Function to get a random word from the user picked category and also get
+    the corresponding images, if the word contains spaces,
+    the spaces are replaced with "-"'s
     """
     module = get_category()
     word = random.choice(module.choices).upper()
