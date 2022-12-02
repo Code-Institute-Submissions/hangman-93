@@ -130,6 +130,17 @@ class Game:
                 print(f"Hard luck {user_input} was not in the word...")
                 self.lives -= 1
 
+    def replay(self):
+        replay = input("Would you like to play again?")
+        if replay.upper() == "Y":
+            clear_screen()
+            play = Game()
+            play.check_letters()
+            play.check_finished()
+        else:
+            clear_screen()
+            main()
+
     def check_finished(self):
         """
         Check if the user has finished the game, either by guessing all
@@ -139,31 +150,13 @@ class Game:
             print("Winner")
             print("The word was : "+" "+self.word)
             print(self.images[self.lives])
-            replay = input("Would you like to play again?")
-            if replay.upper() == "Y":
-                clear_screen()
-                play = Game()
-                play.check_letters()
-                play.check_finished()
-
-            else:
-                clear_screen()
-                main()
+            self.replay()
 
         else:
             print("Game over")
             print("The Word was :" + self.word)
             print(self.images[self.lives])
-            replay = input("Would you like to play again?")
-            if replay.upper() == "Y":
-                clear_screen()
-                play = Game()
-                play.check_letters()
-                play.check_finished()
-                
-            else:
-                clear_screen()
-                main()
+            self.replay()
 
 def main():
     """
