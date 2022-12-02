@@ -3,7 +3,7 @@ import re
 import importlib
 import os
 from time import sleep
-from intro import intro
+# from intro import intro
 
 
 categories = ["words", "films", "books", "songs", "countries"]
@@ -31,7 +31,7 @@ def get_category_input():
     print("4. Choose 4 for Music Singles titles")
     print("5. Choose 5 for Countries")
     print("6. Choose 6 to let the computer pick")
-    
+
     while True:
         category_choice = input("Pick a Category: \n")
         if category_choice.isdigit():
@@ -139,11 +139,31 @@ class Game:
             print("Winner")
             print("The word was : "+" "+self.word)
             print(self.images[self.lives])
+            replay = input("Would you like to play again?")
+            if replay.upper() == "Y":
+                clear_screen()
+                play = Game()
+                play.check_letters()
+                play.check_finished()
+
+            else:
+                clear_screen()
+                main()
+
         else:
             print("Game over")
             print("The Word was :" + self.word)
             print(self.images[self.lives])
-
+            replay = input("Would you like to play again?")
+            if replay.upper() == "Y":
+                clear_screen()
+                play = Game()
+                play.check_letters()
+                play.check_finished()
+                
+            else:
+                clear_screen()
+                main()
 
 def main():
     """
@@ -151,10 +171,16 @@ def main():
     take a user input and check if it is in the
     word the computer has chosen and print message accordingly
     """
-    print(intro)
-    print("\nYou have 6 attempts to guess the correct letters in the word")
+    introduction = importlib.import_module("intro")
+    print(introduction.intro)
+    input("Press Enter to continue...\n")
+    clear_screen()
+    with open('rules.txt') as f:
+        rules = f.read()
+    print(rules)
+    input("Press Enter to continue...\n")
+    clear_screen()
     play = Game()
-    play.display_status()
     play.check_letters()
     play.check_finished()
 

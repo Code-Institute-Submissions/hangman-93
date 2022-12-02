@@ -1,0 +1,8 @@
+RULES
+------------------
+1.You have 6 Lives
+2.You can choose from 5 categories, or let the computer decide
+3.You only have to guess the letters (or numbers if they are Roman Numerals (i.e. I or V))
+4.If there are numbers (e.g. 1,2,3 etc.) or symbols etc., they will be already visible to the user
+5.Spaces are replaced by the "-" symbol
+
