@@ -3,6 +3,7 @@ import re
 import importlib
 import os
 from time import sleep
+from intro import intro
 
 
 categories = ["words", "films", "books", "songs", "countries"]
@@ -156,7 +157,7 @@ def main():
     take a user input and check if it is in the
     word the computer has chosen and print message accordingly
     """
-    print("\nWelcome to Hangman!")
+    print(intro)
     print("\nYou have 6 attempts to guess the correct letters in the word")
     play = Game()
     play.display_status()
