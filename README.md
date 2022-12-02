@@ -44,19 +44,19 @@ Connect your GitHub repository and deploy as normal.
 
 3. Go to Settings and, Click Reveal Config Vars and set keys to PORT and value to 8000
 
-  <img src="Docs/VARS">
+  <img src="Docs/VARS.png">
 
 4. Click Add Buildpacks, add Python, save changes.
 
-  <img src="Docs/Builpacks1.png">
+  <img src="Docs/Buildpacks1.png">
 
-  <img src="Docs/Builpacks2.png">
+  <img src="Docs/Buildpacks2.png">
 
 5. Repeat step 4, but this time add Node.js, once completed it should look like below, with heroku/python above herokue/node.js, if now they can be clicked upon and dragged to change to this order.
 
   <img src="Docs/Completed%20Buildpacks.png">
 
-6. Navigate to the Deploy section. Select GitHub from the Deployment Method section, connnect your GitHub Repo and Authorise when prompted.
+6. Navigate to the Deploy section. Select GitHub from the Deployment Method section, connnect your GitHub Repo by selecting the repo name (in this case, hangman) and Authorise when prompted.
 
   <img src="Docs/Deploy%20menu.png">
 
@@ -64,7 +64,7 @@ Connect your GitHub repository and deploy as normal.
 
   <img src="Docs/Connect%20to%20Github.png">
 
-7. Select the repo name (in this case, hangman), connect and Enable Automatic Deploys. Once Changes are pushed to your repo, the app will be constucted.
+7. Click Enable Automatic Deploys. Once Changes are pushed to your repo, the app will be constucted.
 
   <img src="Docs/Automatic%20Deploys.png">
 
