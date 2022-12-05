@@ -2,7 +2,7 @@ import random
 import re
 import importlib
 import os
-from time import sleep
+import time
 # from intro import intro
 
 
@@ -60,10 +60,11 @@ def get_word():
     module = get_category_input()
     word = random.choice(module.choices).upper()
     images = module.IMAGES
+    story = module.story
     while any(not chr.isalpha() for chr in word):
         word = word.replace(" ", "-")
-        return word, images
-    return word, images
+        return word, images, story
+    return word, images, story
 
 
 class Game:
@@ -72,7 +73,7 @@ class Game:
     choice of words and tests user input is valid
     """
     def __init__(self):
-        self.word, self.images = get_word()
+        self.word, self.images, self.story = get_word()
         self.computer_letters = list(self.word)
         self.lives = 6
         self.user_choices = []
@@ -153,12 +154,18 @@ class Game:
             print("Winner")
             print("The word was : "+" "+self.word)
             print(self.images[self.lives])
+            time.sleep(3)
+            clear_screen()
+            print(self.story[1])
             self.replay()
 
         else:
             print("Game over")
             print("The Word was :" + self.word)
             print(self.images[self.lives])
+            time.sleep(3)
+            clear_screen()
+            print(self.story[2])
             self.replay()
 
 

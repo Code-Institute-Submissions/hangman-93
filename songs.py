@@ -89,3 +89,5 @@ IMAGES = ["""⠀⠀⠀⠀⠀⠀⠀
 | @@@@@@@     @@@@@@   @@@@@@@    @@@@@@@    |
 |   @@@@       @@@@     @@@@@       @@@@     |
 +--------------------------------------------+"""]
+
+story = ["You have to save the last sheet of music by guessing the song", "Well done, you've saved Music", "Oh No, All music was destroyed!"]
