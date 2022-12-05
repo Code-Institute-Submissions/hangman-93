@@ -83,7 +83,8 @@ class Game:
         print(f"user_choices are : {self.user_choices}")
         print(self.images[self.lives])
         print(f"You have {self.lives} lives left")
-        new_word = [char if char in self.correct_guesses or not char.isalpha() else "_ " for char in self.word]
+        new_word = [char if char in self.correct_guesses or not char.isalpha()
+                    else "_ " for char in self.word]
         print(" ".join(new_word))
 
     def get_input(self):
@@ -94,7 +95,8 @@ class Game:
         while True:
             self.display_status()
             guess = input("\nEnter a letter: \n").upper()
-            if guess.isalpha() and guess not in self.user_choices and len(guess) == 1:
+            if (guess.isalpha() and guess not in self.user_choices
+                    and len(guess) == 1):
                 clear_screen()
                 self.user_choices.append(guess)
                 return guess
@@ -116,7 +118,8 @@ class Game:
         Check whether the user input is in the word and display accordingly
         """
         clear_screen()
-        while self.lives > 0 and len(self.computer_letters) != 0 and re.search('[a-zA-Z]', str(self.computer_letters)):
+        while (self.lives > 0 and len(self.computer_letters) != 0
+                and re.search('[a-zA-Z]', str(self.computer_letters))):
             user_input = self.get_input()
             clear_screen()
             if user_input in self.computer_letters:
@@ -157,6 +160,7 @@ class Game:
             print("The Word was :" + self.word)
             print(self.images[self.lives])
             self.replay()
+
 
 def main():
     """
