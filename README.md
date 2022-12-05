@@ -16,7 +16,7 @@ You can read more about Hangman on [Wikipedia](https://en.wikipedia.org/wiki/Han
 
 ## Flow Chart for Hangman
 
-<img src="Docs/flowchart.png">
+<img src="Docs/Flowchart.png">
 
 1. `heroku/python`
 2. `heroku/nodejs`
