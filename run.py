@@ -3,10 +3,9 @@ import re
 import importlib
 import os
 import time
-# from intro import intro
 
 
-categories = ["words", "films", "books", "songs", "countries"]
+CATEGORIES = ["words", "films", "books", "songs", "countries"]
 
 
 def clear_screen():
@@ -36,7 +35,7 @@ def get_category_input():
         category_choice = input("Pick a Category: \n")
         if category_choice.isdigit():
             if int(category_choice) >= 1 and int(category_choice) < 6:
-                selection = categories[int(category_choice) - 1]
+                selection = CATEGORIES[int(category_choice) - 1]
                 module = importlib.import_module(selection)
                 clear_screen()
                 print(f"You have chosen: {selection}")
@@ -44,7 +43,7 @@ def get_category_input():
                 input("Press Enter to continue...\n")
                 return module
             elif int(category_choice) == 6:
-                selection = random.choice(categories)
+                selection = random.choice(CATEGORIES)
                 module = importlib.import_module(selection)
                 clear_screen()
                 print(f"The Computer has chosen: {selection}")
