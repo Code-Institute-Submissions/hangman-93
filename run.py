@@ -198,7 +198,8 @@ class Game:
         if not re.search('[a-zA-Z]', str(self.computer_letters)):
             print("Winner")
             print("The word was : "+" "+self.word)
-            print(self.images[self.lives])
+            winner = importlib.import_module("ASCII")
+            print(winner.winner_art)
             time.sleep(3)
             clear_screen()
             print(self.story[1])
@@ -220,7 +221,7 @@ def main():
     take a user input and check if it is in the
     word the computer has chosen and print message accordingly
     """
-    introduction = importlib.import_module("intro")
+    introduction = importlib.import_module("ASCII")
     print(introduction.intro)
     input("Press Enter to continue...\n")
     clear_screen()
