@@ -1,5 +1,5 @@
 
-Welcome to Hangman,
+<h1>Welcome to Hangman</h1>
 
 This is a Python terminal version of Hangman. It runs in the Code Institute mock terminal. 
 
@@ -9,7 +9,7 @@ You can read more about Hangman on [Wikipedia](https://en.wikipedia.org/wiki/Han
 
 ## How to Play
 
-* The user starts with 6 livesThe Computer picks a word and displays blanks (_'s) to the user to signify the amount of letters in the word
+* The user starts with 6 lives. The Computer picks a word and displays blanks (_'s) to the user to signify the amount of letters in the word
 * The User is then asked to try guess a letter that is in the word
 * If the User's guess is in the word, the computer displays the letter (or letters if there are multiple instances) of the letter in place of the blanks. If it is not in the word, the user loses a life.
 * The User keeps guessing until they have guessed all the correct letters (They win) or runs out of lives/attempts (They lose)

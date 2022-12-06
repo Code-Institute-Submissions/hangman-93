@@ -39,11 +39,15 @@ def get_category_input():
                 selection = categories[int(category_choice) - 1]
                 module = importlib.import_module(selection)
                 print(f"You have chosen: {selection}")
+                print(module.story[0])
+                input("Press Enter to continue...\n")
                 return module
             elif int(category_choice) == 6:
                 selection = random.choice(categories)
                 module = importlib.import_module(selection)
                 print(f"The Computer has chosen: {selection}")
+                print(module.story[0])
+                input("Press Enter to continue...\n")
                 return module
         else:
             print("Sorry, that's not a vaild choice.")
@@ -80,8 +84,11 @@ class Game:
         self.correct_guesses = []
 
     def display_status(self):
-        print(f"Correct letters : {set(self.correct_guesses)}")
-        print(f"user_choices are : {self.user_choices}")
+        """
+        Function to display game and word status to the user
+        """
+        print(f"Correct letters : {list(set(self.correct_guesses))}")
+        print(f"Letters Picked Already : {self.user_choices}")
         print(self.images[self.lives])
         print(f"You have {self.lives} lives left")
         new_word = [char if char in self.correct_guesses or not char.isalpha()
@@ -135,7 +142,10 @@ class Game:
                 self.lives -= 1
 
     def replay(self):
-        replay = input("Would you like to play again?")
+        """
+        Function to check if player wants to play again
+        """
+        replay = input("If you like to play again, please press Y:\n")
         if replay.upper() == "Y":
             clear_screen()
             play = Game()
