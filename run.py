@@ -121,7 +121,10 @@ class Game:
         """
         print(f"Correct letters : {list(set(self.correct_guesses))}")
         print(f"Letters Picked Already : {self.user_choices}")
-        print(self.images[self.lives])
+        if self.lives > 6:
+            print(self.images[6])
+        else:
+            print(self.images[self.lives])
         print(f"You have {self.lives} lives left")
         new_word = [char if char in self.correct_guesses or not char.isalpha()
                     else "_ " for char in self.word]
