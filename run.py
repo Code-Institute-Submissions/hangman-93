@@ -71,13 +71,13 @@ def difficulty_level():
                 return lives
             elif difficulty == "M":
                 clear_screen()
-                print("You have chosen: Easy")
+                print("You have chosen: Medium")
                 lives = 8
                 input("Press Enter to continue...\n")
                 return lives
             elif difficulty == "H":
                 clear_screen()
-                print("You have chosen: Easy")
+                print("You have chosen: Hard")
                 lives = 6
                 input("Press Enter to continue...\n")
                 return lives
