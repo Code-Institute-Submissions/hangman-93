@@ -59,8 +59,8 @@ def get_category_input():
 
 def difficulty_level():
     print("Choose your Difficulty Level")
-    print("Choose 'E' for Easy, 'M' for Medium or 'H' for Hard")
     while True:
+        print("Choose 'E' for Easy, 'M' for Medium or 'H' for Hard")
         difficulty = input("Difficulty: \n").upper()
         if difficulty.isalpha():
             if difficulty == "E":
