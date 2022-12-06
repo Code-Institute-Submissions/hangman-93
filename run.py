@@ -38,6 +38,7 @@ def get_category_input():
             if int(category_choice) >= 1 and int(category_choice) < 6:
                 selection = categories[int(category_choice) - 1]
                 module = importlib.import_module(selection)
+                clear_screen()
                 print(f"You have chosen: {selection}")
                 print(module.story[0])
                 input("Press Enter to continue...\n")
@@ -45,6 +46,7 @@ def get_category_input():
             elif int(category_choice) == 6:
                 selection = random.choice(categories)
                 module = importlib.import_module(selection)
+                clear_screen()
                 print(f"The Computer has chosen: {selection}")
                 print(module.story[0])
                 input("Press Enter to continue...\n")
@@ -52,6 +54,36 @@ def get_category_input():
         else:
             print("Sorry, that's not a vaild choice.")
             print("Please pick another category")
+            continue
+
+
+def difficulty_level():
+    print("Choose your Difficulty Level")
+    print("Choose 'E' for Easy, 'M' for Medium or 'H' for Hard")
+    while True:
+        difficulty = input("Difficulty: \n").upper()
+        if difficulty.isalpha():
+            if difficulty == "E":
+                clear_screen()
+                print("You have chosen: Easy")
+                lives = 10
+                input("Press Enter to continue...\n")
+                return lives
+            elif difficulty == "M":
+                clear_screen()
+                print("You have chosen: Easy")
+                lives = 8
+                input("Press Enter to continue...\n")
+                return lives
+            elif difficulty == "H":
+                clear_screen()
+                print("You have chosen: Easy")
+                lives = 6
+                input("Press Enter to continue...\n")
+                return lives
+        else:
+            print("Sorry, that's not a vaild choice.")
+            print("Please Choose either 'E', 'M' or 'H'")
             continue
 
 
@@ -79,7 +111,7 @@ class Game:
     def __init__(self):
         self.word, self.images, self.story = get_word()
         self.computer_letters = list(self.word)
-        self.lives = 6
+        self.lives = difficulty_level()
         self.user_choices = []
         self.correct_guesses = []
 
