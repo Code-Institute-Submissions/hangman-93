@@ -70,7 +70,7 @@ def difficulty_level():
         print("Choose 'E' for Easy, 'M' for Medium or 'H' for Hard")
         print("(Easy = 10 lives, Medium = 8 Lives, Hard = 6 Lives)")
         difficulty = input("Difficulty: \n").upper()
-        if difficulty.isalpha() and difficulty in {"E", "M", "H"}:
+        if difficulty in {"E", "M", "H"}:
             if difficulty == "E":
                 clear_screen()
                 print("You have chosen: Easy")
