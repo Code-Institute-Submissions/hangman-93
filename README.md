@@ -43,7 +43,7 @@ You can read more about Hangman on [Wikipedia](https://en.wikipedia.org/wiki/Han
 2. Testing also involved [CI Python Linter](https://pep8ci.herokuapp.com/) with Results returning All Clear, no errors found.
 <img src="Docs/CI_pep8.png">
 
-3. Testing all involved Practical testing, this was ongoing throughout the project. To ensure all the input gave the expected results, the links worked, that it deployed correctly on the Code Institute Terminal etc.
+3. Testing also involved Practical testing, this was ongoing throughout the project, both in the Terminal and then on the deployed app. This was to ensure all the input gave the expected results, the links worked, that it deployed correctly on the Code Institute Terminal etc.
 
 
 ## Constraints

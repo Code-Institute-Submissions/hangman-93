@@ -232,6 +232,7 @@ def main():
     word the computer has chosen and print message accordingly
     """
     introduction = importlib.import_module("ascii")
+    print("\n")
     print(introduction.INTRO)
     input("Press Enter to continue...\n")
     clear_screen()
