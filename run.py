@@ -46,7 +46,7 @@ def get_category_input():
                 print(module.STORY[0])
                 input("Press Enter to continue...\n")
                 return module
-            elif int(category_choice) == 6:
+            if int(category_choice) == 6:
                 selection = random.choice(CATEGORIES)
                 module = importlib.import_module(selection)
                 clear_screen()
@@ -70,20 +70,20 @@ def difficulty_level():
         print("Choose 'E' for Easy, 'M' for Medium or 'H' for Hard")
         print("(Easy = 10 lives, Medium = 8 Lives, Hard = 6 Lives)")
         difficulty = input("Difficulty: \n").upper()
-        if difficulty.isalpha():
+        if difficulty.isalpha() and difficulty in {"E", "M", "H"}:
             if difficulty == "E":
                 clear_screen()
                 print("You have chosen: Easy")
                 lives = 10
                 input("Press Enter to continue...\n")
                 return lives
-            elif difficulty == "M":
+            if difficulty == "M":
                 clear_screen()
                 print("You have chosen: Medium")
                 lives = 8
                 input("Press Enter to continue...\n")
                 return lives
-            elif difficulty == "H":
+            if difficulty == "H":
                 clear_screen()
                 print("You have chosen: Hard")
                 lives = 6
@@ -151,18 +151,17 @@ class Game:
                 clear_screen()
                 self.user_choices.append(guess)
                 return guess
-            elif guess.isalpha() and guess in self.user_choices:
+            if guess.isalpha() and guess in self.user_choices:
                 clear_screen()
                 print("You've already picked that letter. Please try again.")
                 continue
-            elif len(guess) > 1:
+            if len(guess) > 1:
                 clear_screen()
                 print("Sorry, that's too many letters")
                 continue
-            else:
-                clear_screen()
-                print("That's not a letter! Please try again")
-                continue
+            clear_screen()
+            print("That's not a letter! Please try again")
+            continue
 
     def check_letters(self):
         """
