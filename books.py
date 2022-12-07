@@ -174,7 +174,7 @@ CHOICES = [
     "The Story of My Experiments with Truth",
     "Bridget Jones's Diary",
 ]
-# List of books taken from https://en.wikipedia.org/wiki/List_of_best-selling_books
+
 IMAGES = ["""⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠈⣿⣷⡀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⢸⣿⣿⣷⣧⠀⠀⠀

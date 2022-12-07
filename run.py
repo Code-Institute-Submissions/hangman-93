@@ -32,7 +32,8 @@ def get_category_input():
 
     while True:
         category_choice = input("Pick a Category: \n")
-        if category_choice.isdigit() and int(category_choice) >= 1 and int(category_choice) < 6:
+        if (category_choice.isdigit() and int(category_choice) >= 1
+                and int(category_choice) < 6):
             if int(category_choice) >= 1 and int(category_choice) < 6:
                 selection = CATEGORIES[int(category_choice) - 1]
                 module = importlib.import_module(selection)
