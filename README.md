@@ -43,7 +43,9 @@ You can read more about Hangman on [Wikipedia](https://en.wikipedia.org/wiki/Han
 2. Testing also involved [CI Python Linter](https://pep8ci.herokuapp.com/) with Results returning All Clear, no errors found.
 <img src="Docs/CI_pep8.png">
 
-3. Testing all involved 
+3. Testing all involved Practical testing, this was ongoing throughout the project. To ensure all the input gave the expected results, the links worked, that it deployed correctly on the Code Institute Terminal etc.
+
+
 ## Constraints
 
 * The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
