@@ -37,8 +37,13 @@ You can read more about Hangman on [Wikipedia](https://en.wikipedia.org/wiki/Han
 
 ## Testing
 
+1. Testing involved using pylint on all the .py modules by running pylint in the terminal, where all code reached 10 out of 10.
+<img src="Docs/pylint.png">
 
+2. Testing also involved [CI Python Linter](https://pep8ci.herokuapp.com/) with Results returning All Clear, no errors found.
+<img src="Docs/CI_pep8.png">
 
+3. Testing all involved 
 ## Constraints
 
 * The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
