@@ -18,9 +18,49 @@ You can read more about Hangman on [Wikipedia](https://en.wikipedia.org/wiki/Han
 * The User keeps guessing until they have guessed all the correct letters (They win) or runs out of lives/attempts (They lose)
 * After the game they are shown the corresponding End story, and asked if they want to play again, if they enter "Y" the game reverts back to the category choice, any other input leads back to the intro image
 
+
 ## Flow Chart for Hangman
 
 <img src="Docs/Flowchart.png">
+
+## Design
+
+* The Intro Art is to display to the User the Game, ASCII Art was used for visual appeal.
+
+<img src="Docs/intro.png">
+
+* Rules are then displayed to the user to explain how the game will work.
+
+<img src="Docs/rules.png">
+
+* Categories are then offered to the user to pick from, the user can also have the computer select the category, this is so the user will know where the word comes from i.e. Film titles, Book titles etc. to add some variety to the game.
+
+<img src="Docs/categories.png">
+
+* Each Category has its own introduction and end story, this is to add a bit more fun for the user and variety.
+
+<img src="Docs/story1.png">
+
+* Each Category in the game has its own ASCII Art relative to the category, Random words is the typical Hangman image, Countries is a picture of the Earth, Songs is music notes etc. Again, this is to add variety and replayability. The Blanks are also spaced out so the user can see how many letters the word contains and the remaining lives are also displayed.
+
+<img src="Docs/game.png">
+
+* The Game displays a message to you user saying they guessed correctly and also the letter in it's correct place, replacing the underscore. It also displays to the user the letters they've already picked and which ones were correct.
+
+<img src="Docs/correct_letter.png">
+
+* The Game displays a message once an incorrect letter is inputted, saying this was incorrect and adds that letter to the list of letters the player has already picked. 
+
+<img src="Docs/incorrect.png">
+
+* If the player Guesses the correct word a trophy is displayed to the User using ASCII Art.
+
+<img src="Docs/winner.png">
+
+* The player is then shown the end of the category Story, dependent on the category they chose and how they did. If they failed to get the word, they are given a different story. They are then asked if they would like to play again, if so (By Entering y) they go back to Category selection, everything else brings them back to the intro screen.
+
+<img src="Docs/end.png">
+
 
 ## Technology used
 
@@ -38,12 +78,26 @@ You can read more about Hangman on [Wikipedia](https://en.wikipedia.org/wiki/Han
 ## Testing
 
 1. Testing involved using pylint on all the .py modules by running pylint in the terminal, where all code reached 10 out of 10.
+
 <img src="Docs/pylint.png">
 
 2. Testing also involved [CI Python Linter](https://pep8ci.herokuapp.com/) with Results returning All Clear, no errors found.
+
 <img src="Docs/CI_pep8.png">
 
-3. Testing also involved Practical testing, this was ongoing throughout the project, both in the Terminal and then on the deployed app. This was to ensure all the input gave the expected results, the links worked, that it deployed correctly on the Code Institute Terminal etc.
+3. Testing also involved Practical testing, this was ongoing throughout the project, both in the Terminal and then on the deployed app. This was to ensure all the input gave the expected results, the links worked, that it deployed correctly on the Code Institute Terminal etc. Testing also involved ensuring that symbols (i.e. commas, apostrophes, hyphens etc.) were displayed to the user. Also, ensuring that if the correct letter was entered, all instances of the letter were filled in. All letters are converted to uppercase also, so the game is not case sensitive.
+
+- 
+
+<img src="Docs/errors1.png">
+
+- 
+
+<img src="Docs/errors2.png">
+
+- 
+
+<img src="Docs/error3.png">
 
 
 ## Constraints
