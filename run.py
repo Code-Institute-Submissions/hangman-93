@@ -73,24 +73,27 @@ def difficulty_level():
         if difficulty in {"E", "M", "H"}:
             if difficulty == "E":
                 clear_screen()
-                print("You have chosen: Easy")
                 lives = 10
+                print("You have chosen: Easy")
+                print(f"You have {lives} Lives")
                 input("Press Enter to continue...\n")
                 return lives
             if difficulty == "M":
                 clear_screen()
-                print("You have chosen: Medium")
                 lives = 8
+                print("You have chosen: Medium")
+                print(f"You have {lives} Lives")
                 input("Press Enter to continue...\n")
                 return lives
             if difficulty == "H":
                 clear_screen()
-                print("You have chosen: Hard")
                 lives = 6
+                print("You have chosen: Hard")
+                print(f"You have {lives} Lives")
                 input("Press Enter to continue...\n")
                 return lives
         else:
-            print("Sorry, that's not a vaild choice.")
+            print("Sorry, that's not a valid choice.")
             print("Please Choose either 'E', 'M' or 'H'")
             continue
 

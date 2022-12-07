@@ -16,6 +16,7 @@ You can read more about Hangman on [Wikipedia](https://en.wikipedia.org/wiki/Han
 * The User is then asked to try guess a letter that is in the word. The input will only allow lettera to be attempted. It also will tell the user if they've already attempted the letter.
 * If the User's guess is in the word, the computer displays the letter (or letters if there are multiple instances of the letter) in place of the blanks. If it is not in the word, the user loses a life.
 * The User keeps guessing until they have guessed all the correct letters (They win) or runs out of lives/attempts (They lose)
+* After the game they are shown the corresponding End story, and asked if they want to play again, if they enter "Y" the game reverts back to the category choice, any other input leads back to the intro image
 
 ## Flow Chart for Hangman
 
