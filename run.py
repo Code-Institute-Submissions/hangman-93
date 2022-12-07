@@ -28,7 +28,7 @@ def get_category_input():
     print("3. Choose 3 for Book titles")
     print("4. Choose 4 for Music Singles titles")
     print("5. Choose 5 for Countries")
-    print("6. Choose 6 to let the computer pick")
+    print("6. Choose 6 for the Computer to pick the Category")
 
     while True:
         category_choice = input("Pick a Category: \n")
@@ -202,8 +202,8 @@ class Game:
         if not re.search('[a-zA-Z]', str(self.computer_letters)):
             print("Winner")
             print("The word was : "+" "+self.word)
-            winner = importlib.import_module("ASCII")
-            print(winner.winner_art)
+            winner = importlib.import_module("ascii")
+            print(winner.WINNER_ART)
             input("Press Enter to continue...\n")
             clear_screen()
             print(self.story[1])
@@ -225,8 +225,8 @@ def main():
     take a user input and check if it is in the
     word the computer has chosen and print message accordingly
     """
-    introduction = importlib.import_module("ASCII")
-    print(introduction.intro)
+    introduction = importlib.import_module("ascii")
+    print(introduction.INTRO)
     input("Press Enter to continue...\n")
     clear_screen()
     with open('rules.txt', encoding="utf-8") as file:

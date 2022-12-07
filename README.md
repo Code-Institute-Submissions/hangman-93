@@ -1,7 +1,7 @@
 
-<h1>Welcome to Hangman</h1>
+<h1>Welcome to HANGMAN</h1>
 
-This is a Python terminal version of Hangman. It runs in the Code Institute mock terminal. 
+This is a Python terminal version of [Hangman](https://forgottenit-hangman.herokuapp.com). It runs in the Code Institute mock terminal. 
 
 The User is given a certain amount of attempts to try guess letters in a hidden word picked by the computer.
 
@@ -9,6 +9,7 @@ You can read more about Hangman on [Wikipedia](https://en.wikipedia.org/wiki/Han
 
 ## How to Play
 
+* At the Loading screen the User is asked to press Enter, then thr rules are displayed
 * The user is asked to choose a category, these are either : Words, Songs (Singles), Films, Books or Countries. Or the user can let the computer pick the category.
 * The user is then shown the background story for their category. The user then decides if they want to play Easy (10 lives), Medium (8 lives) or Hard (6 lives)
 * The Computer picks a word from the chosen category and displays blanks (_'s) to the user to signify the amount of letters in the word. If the word contains symbols such as hyphens or numbers (1,2,3 etc.) These are displayed to the user. If it's roman numerals (i.e. I or V etc.) These are not displayed. 
@@ -27,11 +28,9 @@ You can read more about Hangman on [Wikipedia](https://en.wikipedia.org/wiki/Han
 3. Heroku for deployment
 4. Code Instistute Terminal for displaying finished product
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+## Testing
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
 
-Connect your GitHub repository and deploy as normal.
 
 ## Constraints
 
@@ -40,7 +39,9 @@ Connect your GitHub repository and deploy as normal.
 
 ## Deployment
 <h3>GitPod<h3>
+
 * To deploy in GitPod load from the GitHub repository, then enter "Python3 run.py" in the main terminal
+
 <h3>Heroku</h3>
 1. Go to the Heroku Dashboard and Click "New" in the top right corner then click "Create new app"
 
