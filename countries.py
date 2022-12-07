@@ -289,10 +289,10 @@ story = ["""\n The year is 2035, Climate change is real...\n
           There's only way to save the planet...\n
           You have to guess which country the spill happened in...\n
           Good Luck!\n""",
-         """\n Well done, you've saved the Earth from destruction!\n
-          Elon Musk gives you a brand new Tesla before he lives for Mars!\n
+         """\n          Well done, you've saved the Earth from destruction!\n
+          Elon Musk gives you a brand new Tesla before he leaves for Mars!\n
           You're the Best!\n""",
-         """\n Oh No! The Earth was destroyed...!\n
+         """\n          Oh No! The Earth was destroyed...!\n
           We should have listened...\n
           If only there was a way to play again...\n
           Unless...\n"""]

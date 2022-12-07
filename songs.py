@@ -213,9 +213,9 @@ story = ["""\n The year is 2045, AI has taken over the music business...\n
         There's only one way to save music...\n
         You have to guess the song Spotify has chosen...\n
         Good Luck!\n""",
-         """\n Well done, you've saved Music from destruction!\n
+         """\n        Well done, you've saved Music from destruction!\n
         There will be dancing in the streets tonight!\n
         You're simply the Best!\n""",
-         """\n Oh No! All man made music was destroyed!\n
+         """\n        Oh No! All man made music was destroyed!\n
         If only there was a way to play again...\n
         Unless...\n"""]
