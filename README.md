@@ -29,6 +29,12 @@ You can read more about Hangman on [Wikipedia](https://en.wikipedia.org/wiki/Han
 3. Heroku for deployment
 4. Code Instistute Terminal for displaying finished product
 
+## Imports used from Python Library
+* import random - Used to allow the computer to randomly pick a category if that is the choice the user has made and also to randomly pick the word from choices available
+* import re - Used to search the word as a string to see if it still contains letters (in case it just contains characters or numbers)
+* import importlib - Used to import modules dynamically, once the user has chosen their category
+* import os - Used for the "Clear Screen" function, to check what Operating System the user is using so the appropriate clear method can be used (i.e. "clear" or "cls")
+
 ## Testing
 
 
