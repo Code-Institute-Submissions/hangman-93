@@ -15,6 +15,7 @@ You can read more about Hangman on [Wikipedia](https://en.wikipedia.org/wiki/Han
 * The Computer picks a word from the chosen category and displays blanks (_'s) to the user to signify the amount of letters in the word. If the word contains symbols such as hyphens or numbers (1,2,3 etc.) These are displayed to the user. If it's roman numerals (i.e. I or V etc.) These are not displayed. 
 * The User is then asked to try guess a letter that is in the word. The input will only allow lettera to be attempted. It also will tell the user if they've already attempted the letter.
 * If the User's guess is in the word, the computer displays the letter (or letters if there are multiple instances of the letter) in place of the blanks. If it is not in the word, the user loses a life.
+* Lives are only reduced for incorrect answers, not for reguessing the same input or inputting invalid input (i.e. numbers)
 * The User keeps guessing until they have guessed all the correct letters (They win) or runs out of lives/attempts (They lose)
 * After the game they are shown the corresponding End story, and asked if they want to play again, if they enter "Y" the game reverts back to the category choice, any other input leads back to the intro image
 
@@ -85,17 +86,20 @@ You can read more about Hangman on [Wikipedia](https://en.wikipedia.org/wiki/Han
 
 <img src="Docs/CI_pep8.png">
 
-3. Testing also involved Practical testing, this was ongoing throughout the project, both in the Terminal and then on the deployed app. This was to ensure all the input gave the expected results, the links worked, that it deployed correctly on the Code Institute Terminal etc. Testing also involved ensuring that symbols (i.e. commas, apostrophes, hyphens etc.) were displayed to the user. Also, ensuring that if the correct letter was entered, all instances of the letter were filled in. All letters are converted to uppercase also, so the game is not case sensitive.
+3. Testing also involved Practical testing, this was ongoing throughout the project, both in the Terminal and then on the deployed app. This was to ensure all the input gave the expected results, the links worked, that it deployed correctly on the Code Institute Terminal etc. Testing also involved ensuring that symbols (i.e. commas, apostrophes, hyphens etc.) were displayed to the user. Also, ensuring that if the correct letter was entered, all instances of the letter were filled in. All letters are converted to uppercase also, so the game is not case sensitive. Also, only one letter of input is taken at a time in the game, if the user enters more than that, they are given a display message to indicate that. Testing also checked that lives are only reduced for incorrect answers, not for reguessing the same input or inputting invalid input (i.e. numbers)
 
-- 
+
+- In Categories, if the user does not enter a valid input (a number between 1 and 6 inclusive) an error message is displayed.
 
 <img src="Docs/errors1.png">
 
-- 
+
+- In Difficulty Settings, if the user does not enter a valid input ("E" for Easy, "M" for Medium, "H" for Hard) an error message is displayed and they are asked again for input
 
 <img src="Docs/errors2.png">
 
-- 
+
+- If the user inputs a number or symbol or a blank, the terminal displays that it wasn't a valid input (No lives are lost). A separate message is displayed if the letter was guessed already or if the user has inputted too many characters (Again, no lives are lost in these instances)
 
 <img src="Docs/error3.png">
 
