@@ -1,3 +1,8 @@
+"""
+    Module that holds Film choices, Film ASCII Art and Film Story for
+    Intro, Winning and Losing.
+"""
+
 CHOICES = [
     "Citizen Kane",
     "Casablanca",

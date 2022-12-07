@@ -1,3 +1,7 @@
+"""
+    Module that holds Functions for getting word from other modules,
+    displaying word and playing Game
+"""
 import random
 import re
 import importlib

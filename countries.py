@@ -1,3 +1,8 @@
+"""
+    Module that holds Country choices, Country ASCII Art and Country Story for
+    Intro, Winning and Losing.
+"""
+
 CHOICES = [
     "Afghanistan",
     "Albania",

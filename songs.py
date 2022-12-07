@@ -1,3 +1,8 @@
+"""
+    Module that holds Song choices, Song ASCII Art and Song Story for
+    Intro, Winning and Losing.
+"""
+
 CHOICES = [
     "SOMETHING ABOUT THE WAY YOU LOOK TONIGHT / CANDLE IN THE WIND ",
     "DO THEY KNOW IT'S CHRISTMAS?",

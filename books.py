@@ -1,3 +1,7 @@
+"""
+    Module that holds Book choices, Book ASCII Art and Book Story for intro,
+    Winning and Losing.
+"""
 CHOICES = [
     "The Little Prince",
     "The Hobbit",

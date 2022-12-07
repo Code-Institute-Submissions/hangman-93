@@ -1,3 +1,8 @@
+"""
+    Module that holds Word choices, Word ASCII Art and Word Story for
+    Intro, Winning and Losing.
+"""
+
 CHOICES = [
     "adaptable",
     "add",
