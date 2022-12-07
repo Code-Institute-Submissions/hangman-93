@@ -2467,7 +2467,6 @@ choices = [
     "zoom",
 ]
 
-# list of words taken from https://www.randomlists.com/
 
 IMAGES = ["""     ----------------------++
        !                   ++

@@ -196,7 +196,7 @@ choices = [
     "Zambia",
     "Zimbabwe",
 ]
-# list of countries taken from https://www.britannica.com/topic/list-of-countries-1993160 
+
 IMAGES = ["""⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠈⣿⣷⡀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⢸⣿⣿⣷⣧⠀⠀⠀
