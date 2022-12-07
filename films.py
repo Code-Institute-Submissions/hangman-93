@@ -187,7 +187,7 @@ story = [
     """\n Well done, you've saved the films from destruction!\n
         I'm sure they'll make a movie about You someday!\n
         You're the Best!\n""",
-    """ Oh No! All the films were destroyed!\n
+    """\n Oh No! All the films were destroyed!\n
         If only there was a way to play again...\n
         Unless...\n""",
 ]

@@ -271,6 +271,17 @@ vvvvvvvvv^>vvvvv v^
 |                 |
 +-----------------+"""]
 
-# List of books taken from https://en.wikipedia.org/wiki/List_of_best-selling_books
 
-story = ["\n The year is 2073, AI has taken over the Book business...\n AMAZON is trying to wipe out all books from the planet to sell more Kindles...\n The only way to save the written word is by guessing the book AMAZON has chosen...\n Good Luck!\n", "\n Well done, you've saved the last Books from destruction!\n Think of all the things you'll get to read!\n You're the Best!\n I wonder what's on NETFLIX...\n", " Oh No! All books have been destroyed!\n If only there was a way to play again...\n Unless...\n"]
+story = ["""\n The year is 2073, AI has taken over the Book business...\n
+            AMAZON is trying to wipe out all books on Earth\n
+            Just to sell more Kindles...\n
+            There's only one way to save all books...\n
+            You have to guess the book AMAZON has chosen!\n
+            Good Luck!\n""",
+         """\n Well done, you've saved the last Books from destruction!\n
+            Think of all the things you'll get to read!\n
+            You're the Best!\n
+            I wonder what's on NETFLIX...\n""",
+         """\n Oh No! All books have been destroyed!\n
+            If only there was a way to play again...\n
+            Unless...\n"""]
