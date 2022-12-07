@@ -9,9 +9,11 @@ You can read more about Hangman on [Wikipedia](https://en.wikipedia.org/wiki/Han
 
 ## How to Play
 
-* The user starts with 6 lives. The Computer picks a word and displays blanks (_'s) to the user to signify the amount of letters in the word
-* The User is then asked to try guess a letter that is in the word
-* If the User's guess is in the word, the computer displays the letter (or letters if there are multiple instances) of the letter in place of the blanks. If it is not in the word, the user loses a life.
+* The user is asked to choose a category, these are either : Words, Songs (Singles), Films, Books or Countries. Or the user can let the computer pick the category.
+* The user is then shown the background story for their category. The user then decides if they want to play Easy (10 lives), Medium (8 lives) or Hard (6 lives)
+* The Computer picks a word from the chosen category and displays blanks (_'s) to the user to signify the amount of letters in the word. If the word contains symbols such as hyphens or numbers (1,2,3 etc.) These are displayed to the user. If it's roman numerals (i.e. I or V etc.) These are not displayed. 
+* The User is then asked to try guess a letter that is in the word. The input will only allow lettera to be attempted. It also will tell the user if they've already attempted the letter.
+* If the User's guess is in the word, the computer displays the letter (or letters if there are multiple instances of the letter) in place of the blanks. If it is not in the word, the user loses a life.
 * The User keeps guessing until they have guessed all the correct letters (They win) or runs out of lives/attempts (They lose)
 
 ## Flow Chart for Hangman

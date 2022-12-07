@@ -2,7 +2,7 @@ import random
 import re
 import importlib
 import os
-import time
+
 
 
 CATEGORIES = ["words", "films", "books", "songs", "countries"]
@@ -33,7 +33,7 @@ def get_category_input():
 
     while True:
         category_choice = input("Pick a Category: \n")
-        if category_choice.isdigit():
+        if category_choice.isdigit() and int(category_choice) >= 1 and int(category_choice) < 6:
             if int(category_choice) >= 1 and int(category_choice) < 6:
                 selection = CATEGORIES[int(category_choice) - 1]
                 module = importlib.import_module(selection)
@@ -57,9 +57,14 @@ def get_category_input():
 
 
 def difficulty_level():
+    """
+    Function to let the user choose difficulty, by setting the amount of
+    lives they have
+    """
     print("Choose your Difficulty Level")
     while True:
         print("Choose 'E' for Easy, 'M' for Medium or 'H' for Hard")
+        print("(Easy = 10 lives, Medium = 8 Lives, Hard = 6 Lives)")
         difficulty = input("Difficulty: \n").upper()
         if difficulty.isalpha():
             if difficulty == "E":
@@ -199,7 +204,7 @@ class Game:
             print("The word was : "+" "+self.word)
             winner = importlib.import_module("ASCII")
             print(winner.winner_art)
-            time.sleep(3)
+            input("Press Enter to continue...\n")
             clear_screen()
             print(self.story[1])
             self.replay()
@@ -208,7 +213,7 @@ class Game:
             print("Game over")
             print("The Word was :" + self.word)
             print(self.images[self.lives])
-            time.sleep(3)
+            input("Press Enter to continue...\n")
             clear_screen()
             print(self.story[2])
             self.replay()
