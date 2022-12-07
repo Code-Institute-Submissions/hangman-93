@@ -51,4 +51,4 @@ IMAGES = ["""   {{{ {{{ ~~      ~~~   }}} }} }}
 |    TNT         +---+                 +------+
 +----------------+                     +------+"""]
 
-story = ["You have to save the last sheet of music by guessing the song", "Well done, you've saved Music", "Oh No, All music was destroyed!"]
+story = ["\n The year is 2028, the Oscars have announced their top 100 Films of all time...\n A famous movie Director didn't make the 'cut'...\n He's going to blow up all the master tapes of the films...\n You're only chance to stop him is by guessing the password to the bomb...\n Ironically, it's one of the films on the list...!\n Good Luck!\n", "\n Well done, you've saved the films from destruction!\n I'm sure they'll make a movie about You someday!\n You're the Best!\n", " Oh No! All the films were destroyed!\n If only there was a way to play again...\n Unless...\n"]

@@ -96,4 +96,4 @@ IMAGES = ["""     ----------------------++
 +++++++++++++++++++++++++++++^^
 """]
 
-story = ["You have to save the last sheet of music by guessing the song", "Well done, you've saved Music", "Oh No, All music was destroyed!"]
+story = ["\n The year is 1812...\n You've been falsely accused of a crime and are due to be hanged until death...\n Luckily for you the Executioner is an odd fellow though...\n He said if you can guess the word he's thinking off, you can go free...!\n Good Luck!\n", "\n Well done, you guessed the word!\n You go on to live a long and succesful life!\n You're the Best!\n", " Oh No! You've been hanged!\n If only there was a way to play again...\n Unless...\n"]

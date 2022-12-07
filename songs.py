@@ -78,4 +78,4 @@ IMAGES = ["""⠀⠀⠀⠀⠀⠀⠀
 |    ;;;       ;;;      ;;;          |
 |____________________________________|"""]
 
-story = ["You have to save the last sheet of music by guessing the song", "Well done, you've saved Music", "Oh No, All music was destroyed!"]
+story = ["\n The year is 2045, AI has taken over the music business...\n Spotify is trying to wipe all Man made music from the planet...\n The only way to save music is by guessing the song Spotify has chosen...\n Good Luck!\n", "\n Well done, you've saved Music from destruction!\n There will be dancing in the streets tonight!\n You're the Best!\n", " Oh No! All man made music was destroyed!\n If only there was a way to play again...\n Unless...\n"]
