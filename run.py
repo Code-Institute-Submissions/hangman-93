@@ -27,17 +27,17 @@ def get_category_input():
         Function to display category choices to user and return their choice
     """
     print("\n You can choose what category you would like your word from:")
-    print(" 1. Choose 1 for Random Words")
+    print("\n 1. Choose 1 for Random Words")
     print(" 2. Choose 2 for Film titles")
     print(" 3. Choose 3 for Book titles")
     print(" 4. Choose 4 for Music Singles titles")
     print(" 5. Choose 5 for Countries")
-    print(" 6. Choose 6 for the Computer to pick the Category")
+    print(" 6. Choose 6 for the Computer to pick the Category\n")
 
     while True:
         category_choice = input("Pick a Category: \n")
         if (category_choice.isdigit() and int(category_choice) >= 1
-                and int(category_choice) < 6):
+                and int(category_choice) <= 6):
             if int(category_choice) >= 1 and int(category_choice) < 6:
                 selection = CATEGORIES[int(category_choice) - 1]
                 module = importlib.import_module(selection)
