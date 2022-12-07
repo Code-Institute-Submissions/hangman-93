@@ -228,8 +228,8 @@ def main():
     print(introduction.intro)
     input("Press Enter to continue...\n")
     clear_screen()
-    with open('rules.txt') as f:
-        rules = f.read()
+    with open('rules.txt', encoding="utf-8") as file:
+        rules = file.read()
     print(rules)
     input("Press Enter to continue...\n")
     clear_screen()
