@@ -1,4 +1,4 @@
-choices = [
+CHOICES = [
     "Citizen Kane",
     "Casablanca",
     "The Godfather",
@@ -124,20 +124,20 @@ choices = [
     "Yankee Doodle Dandy",
 ]
 
-    # list of movies taken from https://en.wikipedia.org/wiki/AFI%27s_100_Years...100_Movies
+
 IMAGES = ["""   {{{ {{{ ~~      ~~~   }}} }} }}
   {{  {{~ ~    ((   }~~     ) }}}}
   {   ~~       ~{ ~ }     } )  } }
   {  ({  ~{  {  { }} }     ~~~ } }
   { {(~~  {   BOOM!!!   ~)     }}}
   {{ ((~  {   [  }  }   ~~    ~~}}
-  [{(  [[~~~[[[    \~~ )) ) )  }}}
+  [{(  [[~~~[[[   \\~~ )) ) )  }}}
    {   ~~( ~( /    \\ ~~~~}} }}}}
-    {{((~~~  / ~~    \    )~~)} )
+    {{((~~~  / ~~   \\    )~~)} )
             /  |   | \\
-           /   |   |   
+           /   |   |
         ///    |   |   \\
----------------+---+----------------  ""","""+----------------+
+---------------+---+----------------  """, """+----------------+
 |    TNT         +---+
 +----------------+   |  *
 |    TNT         +---+-***
@@ -176,7 +176,7 @@ IMAGES = ["""   {{{ {{{ ~~      ~~~   }}} }} }}
 |    TNT         +---+                 +------+
 +----------------+                     +------+"""]
 
-story = [
+STORY = [
     """\n The year is 2028...\n
         The Oscars have announced their top 100 Films of all time...\n
         A famous movie Director didn't make the 'cut'...\n
@@ -184,10 +184,10 @@ story = [
         Your only chance to stop him is by guessing the bombs password...\n
         Ironically, it's one of the films on the list...!\n
         Good Luck!\n""",
-    """\n         Well done, you've saved the films from destruction!\n
+    """\n        Well done, you've saved the films from destruction!\n
         I'm sure they'll make a movie about You someday!\n
         You're the Best!\n""",
-    """\n         Oh No! All the films were destroyed!\n
+    """\n        Oh No! All the films were destroyed!\n
         If only there was a way to play again...\n
         Unless...\n""",
 ]

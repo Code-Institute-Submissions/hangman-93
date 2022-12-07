@@ -1,4 +1,4 @@
-choices = [
+CHOICES = [
     "Afghanistan",
     "Albania",
     "Algeria",
@@ -283,16 +283,16 @@ IMAGES = ["""⠀⠀⠀⠀⠀
     ,,.....MMMMMM....MMM,
      ,,,,,.,,MMM,,...,.,"""]
 
-story = ["""\n The year is 2035, Climate change is real...\n
+STORY = ["""\n The year is 2035, Climate change is real...\n
           There has been a massive oil spill...\n
           The Earth is on Fire and no one can save it but you...\n
           There's only way to save the planet...\n
           You have to guess which country the spill happened in...\n
           Good Luck!\n""",
-         """\n          Well done, you've saved the Earth from destruction!\n
+         """\n        Well done, you've saved the Earth from destruction!\n
           Elon Musk gives you a brand new Tesla before he leaves for Mars!\n
           You're the Best!\n""",
-         """\n          Oh No! The Earth was destroyed...!\n
+         """\n        Oh No! The Earth was destroyed...!\n
           We should have listened...\n
           If only there was a way to play again...\n
           Unless...\n"""]

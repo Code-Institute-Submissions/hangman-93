@@ -1,4 +1,4 @@
-choices = [
+CHOICES = [
     "SOMETHING ABOUT THE WAY YOU LOOK TONIGHT / CANDLE IN THE WIND ",
     "DO THEY KNOW IT'S CHRISTMAS?",
     "BOHEMIAN RHAPSODY",
@@ -208,7 +208,7 @@ IMAGES = ["""⠀⠀⠀⠀⠀⠀⠀
 |    ;;;       ;;;      ;;;          |
 |____________________________________|"""]
 
-story = ["""\n The year is 2045, AI has taken over the music business...\n
+STORY = ["""\n The year is 2045, AI has taken over the music business...\n
         Spotify is trying to wipe all Man made music from the planet...\n
         There's only one way to save music...\n
         You have to guess the song Spotify has chosen...\n

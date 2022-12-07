@@ -37,16 +37,16 @@ def get_category_input():
                 selection = CATEGORIES[int(category_choice) - 1]
                 module = importlib.import_module(selection)
                 clear_screen()
-                print(f"You have chosen: {selection}")
-                print(module.story[0])
+                print(f"You have chosen: {selection.upper()}")
+                print(module.STORY[0])
                 input("Press Enter to continue...\n")
                 return module
             elif int(category_choice) == 6:
                 selection = random.choice(CATEGORIES)
                 module = importlib.import_module(selection)
                 clear_screen()
-                print(f"The Computer has chosen: {selection}")
-                print(module.story[0])
+                print(f"The Computer has chosen: {selection.upper()}")
+                print(module.STORY[0])
                 input("Press Enter to continue...\n")
                 return module
         else:
@@ -97,9 +97,9 @@ def get_word():
     the spaces are replaced with "-"'s
     """
     module = get_category_input()
-    word = random.choice(module.choices).upper()
+    word = random.choice(module.CHOICES).upper()
     images = module.IMAGES
-    story = module.story
+    story = module.STORY
     while any(not chr.isalpha() for chr in word):
         word = word.replace(" ", "-")
         return word, images, story

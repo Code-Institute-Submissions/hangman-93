@@ -1,4 +1,4 @@
-choices = [
+CHOICES = [
     "aback",
     "abaft",
     "abandoned",
@@ -2562,7 +2562,7 @@ IMAGES = ["""     ----------------------++
 +++++++++++++++++++++++++++++^^
 """]
 
-story = ["""\n The year is 1812...\n
+STORY = ["""\n The year is 1812...\n
          You've been falsely accused of a crime...\n
          You are due to be hanged until death...\n
          Luckily for you the Executioner is an odd fellow though...\n
