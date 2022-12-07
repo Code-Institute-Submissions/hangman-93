@@ -4,7 +4,6 @@ import importlib
 import os
 
 
-
 CATEGORIES = ["words", "films", "books", "songs", "countries"]
 
 
