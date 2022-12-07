@@ -1,12 +1,12 @@
-RULES
-------------------
-1.You can can choose from 5 categories, or let the computer decide
-2.You can choose from Easy (10 lives), Medium (8 Lives) or Hard (6 Lives)
-3.You only have to guess the letters 
-4.If there are numbers/digits (e.g. 1,2,3 etc.) or symbols etc., 
-  they will be already visible to the user.*
-5.Spaces are replaced by the underscore ("_") symbol until the user
-  guesses the letter.
+ RULES
+ ------------------
+ 1.You can can choose from 5 categories, or let the computer decide
+ 2.You can choose from Easy (10 lives), Medium (8 Lives) or Hard (6 Lives)
+ 3.You only have to guess the letters 
+ 4.If there are numbers/digits (e.g. 1,2,3 etc.) or symbols etc., 
+   they will be already visible to the user.*
+ 5.Spaces are replaced by the underscore ("_") symbol until the user
+   guesses the letter.
 
-*Roman Numerals (i.e. I or V) are counted as letters
+  *Roman Numerals (i.e. I or V) are counted as letters
 
