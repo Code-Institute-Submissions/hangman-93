@@ -20,8 +20,12 @@ You can read more about Hangman on [Wikipedia](https://en.wikipedia.org/wiki/Han
 
 <img src="Docs/Flowchart.png">
 
-1. `heroku/python`
-2. `heroku/nodejs`
+## Technology used
+
+1. GitPod for writing the code
+2. Python as the programming language
+3. Heroku for deployment
+4. Code Instistute Terminal for displaying finished product
 
 You must then create a _Config Var_ called `PORT`. Set this to `8000`
 
@@ -35,7 +39,9 @@ Connect your GitHub repository and deploy as normal.
 * A "\n" symbol had to be inserted at the end if user input print outs due to a quirk in the terminal interface.
 
 ## Deployment
-
+<h3>GitPod<h3>
+* To deploy in GitPod load from the GitHub repository, then enter "Python3 run.py" in the main terminal
+<h3>Heroku</h3>
 1. Go to the Heroku Dashboard and Click "New" in the top right corner then click "Create new app"
 
   <img src="Docs/Home.png">

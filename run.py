@@ -183,7 +183,7 @@ class Game:
         """
         Function to check if player wants to play again
         """
-        replay = input("If you like to play again, please press Y:\n")
+        replay = input("If you would like to play again, please press Y:\n")
         if replay.upper() == "Y":
             clear_screen()
             play = Game()
