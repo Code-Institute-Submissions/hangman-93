@@ -109,6 +109,18 @@ You can read more about Hangman on [Wikipedia](https://en.wikipedia.org/wiki/Han
 * The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
 * A "\n" symbol had to be inserted at the end if user input print outs due to a quirk in the terminal interface.
 
+## Learning and Future Improvements
+
+* When initially deploying the App, I had used the import from method to get the words (i.e. import books, import songs etc.) This would involve writing if input == "something" word == "something" for each category choice, as I couldn't find a way to import dynamically using this (i.e. import {user_input}) So I used the importlib to acheive this, as I felt it minimised the code needed as I could just use a list index for the user input. However, this did mean that I had to name the variables in each category module the same (CHOICES, IMAGES, STORY). So it would be books.IMAGES or songs.IMAGES etc. 
+
+* I found using sets to be helpful in displaying correct choices, as if there was more than one instance of the letter, it would only display it once in the users list. I did convert the display to a list though for consistency of display. 
+
+* Future improvements - Originally, to have variety in the game, I wanted to include Movies, Books etc. and because these often included spaces, hyphens etc. I felt it best to just take alphabetical input. This limited the game in that the user could not just outright guess the word. I felt it might be messy as the user may input the apostrophes, spaces etc. 
+
+Though it would have been possible to use the strip() method etc. to remove spaces and just check the letters inputted against the word, as the user only loses lives for incorrect answers, if they had the word they could still play by entering the letters one at a time. So this functionality was omitted. But may still have improved the game.
+
+* Another improvement would be to import json files from an API, and use the Keys for hints. For example, a Book file may have author, year, type etc. The user could type in "hint" and one of these could be displayed, possibly for a limited amount of time using the sleep() function. This would work for songs etc. as well, or if words were taken from an actual dictionary, the definition could be displayed (using the hidden word as the key)
+
 ## Deployment
 <h3>GitPod<h3>
 
