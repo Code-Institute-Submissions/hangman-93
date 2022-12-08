@@ -48,7 +48,7 @@ You can read more about Hangman on [Wikipedia](https://en.wikipedia.org/wiki/Han
 
 * The Game displays a message to you user saying they guessed correctly and also the letter in it's correct place, replacing the underscore. It also displays to the user the letters they've already picked and which ones were correct.
 
-<img src="Docs/correct_letter.png">
+<img src="Docs/correct_letter.png">   
 
 * The Game displays a message once an incorrect letter is inputted, saying this was incorrect and adds that letter to the list of letters the player has already picked. 
 
@@ -101,7 +101,7 @@ You can read more about Hangman on [Wikipedia](https://en.wikipedia.org/wiki/Han
 
 - If the user inputs a number or symbol or a blank, the terminal displays that it wasn't a valid input (No lives are lost). A separate message is displayed if the letter was guessed already or if the user has inputted too many characters (Again, no lives are lost in these instances)
 
-<img src="Docs/error3.png">
+<img src="Docs/error3.png">   <img src="Docs/already_picked.png">
 
 
 ## Constraints
@@ -109,25 +109,29 @@ You can read more about Hangman on [Wikipedia](https://en.wikipedia.org/wiki/Han
 * The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
 * A "\n" symbol had to be inserted at the end if user input print outs due to a quirk in the terminal interface.
 
-## Learning and Future Improvements
+# Learning and Future Improvements
+
+## Learning
 
 * When initially deploying the App, I had used the import from method to get the words (i.e. import books, import songs etc.) This would involve writing if input == "something" word == "something" for each category choice, as I couldn't find a way to import dynamically using this (i.e. import {user_input}) So I used the importlib to acheive this, as I felt it minimised the code needed as I could just use a list index for the user input. However, this did mean that I had to name the variables in each category module the same (CHOICES, IMAGES, STORY). So it would be books.IMAGES or songs.IMAGES etc. 
 
 * I found using sets to be helpful in displaying correct choices, as if there was more than one instance of the letter, it would only display it once in the users list. I did convert the display to a list though for consistency of display. 
 
-* Future improvements - Originally, to have variety in the game, I wanted to include Movies, Books etc. and because these often included spaces, hyphens etc. I felt it best to just take alphabetical input. This limited the game in that the user could not just outright guess the word. I felt it might be messy as the user may input the apostrophes, spaces etc. 
+## Future improvements  
 
-Though it would have been possible to use the strip() method etc. to remove spaces and just check the letters inputted against the word, as the user only loses lives for incorrect answers, if they had the word they could still play by entering the letters one at a time. So this functionality was omitted. But may still have improved the game.
+* Originally, to have variety in the game, I wanted to include Movies, Books etc. and because these often included spaces, hyphens etc. I felt it best to just take alphabetical input. This limited the game in that the user could not just outright guess the word. I felt it might be messy as the user may input the apostrophes, spaces etc. 
+
+* Though it would have been possible to use the strip() method etc. to remove spaces and just check the letters inputted against the word, as the user only loses lives for incorrect answers, if they had the word they could still play by entering the letters one at a time. So this functionality was omitted. But may still have improved the game.
 
 * Another improvement would be to import json files, from an API for example, and use the Keys for hints. For example, a Book file may have author, year, type etc. The user could type in "hint" and one of these could be displayed, possibly for a limited amount of time using the sleep() function. Or the user could select what hint they would like i.e. 1. for Author, 2. for Genre 3. for Year etc. This would work for Songs, Films etc. as well, or if words were taken from an actual dictionary, the definition could be displayed (using the hidden word as the key). 
 
-* Also the Art could be improved, perhaps by having multiple images displayed to give it a moving effect. 
+* Also the Art could be improved, perhaps by having multiple images displayed to give it a moving effect using a time delay between images that have slight alterations. 
 
 
 ## Deployment
 <h3>GitPod<h3>
 
-* To deploy in GitPod load from the GitHub repository, then enter "Python3 run.py" in the main terminal
+* To deploy [Hangman](https://github.com/Forgottenit/hangman) in GitPod load from the GitHub repository, then enter "Python3 run.py" in the main terminal on GitPod
 
 <h3>Heroku</h3>
 1. Go to the Heroku Dashboard and Click "New" in the top right corner then click "Create new app"
@@ -168,6 +172,8 @@ Though it would have been possible to use the strip() method etc. to remove spac
 
   <img src="Docs/Open%20App.png">
 
+9. [Hangman](https://forgottenit-hangman.herokuapp.com) is available by clicking this link.
+
 ## Acknowledgements 
 * https://wtools.io/convert-list-to-json-array for converting lists to json format
 * https://www.britannica.com/topic/list-of-countries-1993160 for list of countries
@@ -176,5 +182,10 @@ Though it would have been possible to use the strip() method etc. to remove spac
 * https://www.randomlists.com/ for random list of words
 * https://en.wikipedia.org/wiki/List_of_best-selling_books for list of books
 * https://www.scaler.com/topics/how-to-clear-screen-in-python/ for info on how to Clear User Screen depending 
-  on operating System 
-* https://emojicombos.com/fire-ascii-art AND https://asciiflow.com/ ASCII Art
+  on operating System
+* https://codebeautify.org/ for Formatting lists 
+* https://emojicombos.com/ AND https://asciiflow.com/ for ASCII Art
+* https://stackoverflow.com/ AND https://docs.python.org/ for general python queries
+* Simen Daehlin and Rohit Sharma from Code Institute for advice and guidance
+* Code Instititute for learning materials and instructions on deployment
+* Shizuka Donaghue (Code Institute Student) for assistance with Heroku deployment
