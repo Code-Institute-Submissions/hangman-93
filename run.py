@@ -6,7 +6,7 @@ import random
 import re
 import importlib
 import os
-
+import ascii_art
 
 CATEGORIES = ["words", "films", "books", "songs", "countries"]
 
@@ -210,8 +210,8 @@ class Game:
         if not re.search('[a-zA-Z]', str(self.computer_letters)):
             print("Winner")
             print("The word was : "+" "+self.word)
-            winner = importlib.import_module("ascii")
-            print(winner.WINNER_ART)
+            winner = ascii_art.WINNER_ART
+            print(winner)
             input("Press Enter to continue...\n")
             clear_screen()
             print(self.story[1])
@@ -232,9 +232,9 @@ def main():
     Function to import and print introduction art, print rules,
     then run game
     """
-    introduction = importlib.import_module("ascii")
+    introduction = ascii_art.INTRO
     print("\n")
-    print(introduction.INTRO)
+    print(introduction)
     input("Press Enter to continue...\n")
     clear_screen()
     with open('rules.txt', encoding="utf-8") as file:
