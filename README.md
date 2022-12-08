@@ -119,7 +119,10 @@ You can read more about Hangman on [Wikipedia](https://en.wikipedia.org/wiki/Han
 
 Though it would have been possible to use the strip() method etc. to remove spaces and just check the letters inputted against the word, as the user only loses lives for incorrect answers, if they had the word they could still play by entering the letters one at a time. So this functionality was omitted. But may still have improved the game.
 
-* Another improvement would be to import json files from an API, and use the Keys for hints. For example, a Book file may have author, year, type etc. The user could type in "hint" and one of these could be displayed, possibly for a limited amount of time using the sleep() function. This would work for songs etc. as well, or if words were taken from an actual dictionary, the definition could be displayed (using the hidden word as the key)
+* Another improvement would be to import json files, from an API for example, and use the Keys for hints. For example, a Book file may have author, year, type etc. The user could type in "hint" and one of these could be displayed, possibly for a limited amount of time using the sleep() function. Or the user could select what hint they would like i.e. 1. for Author, 2. for Genre 3. for Year etc. This would work for Songs, Films etc. as well, or if words were taken from an actual dictionary, the definition could be displayed (using the hidden word as the key). 
+
+* Also the Art could be improved, perhaps by having multiple images displayed to give it a moving effect. 
+
 
 ## Deployment
 <h3>GitPod<h3>

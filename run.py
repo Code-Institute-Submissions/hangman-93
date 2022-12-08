@@ -25,6 +25,7 @@ def clear_screen():
 def get_category_input():
     """
         Function to display category choices to user and return their choice
+        from the selected module
     """
     print("\n You can choose what category you would like your word from:")
     print("\n 1. Choose 1 for Random Words")
@@ -101,8 +102,8 @@ def difficulty_level():
 def get_word():
     """
     Function to get a random word from the user picked category and also get
-    the corresponding images, if the word contains spaces,
-    the spaces are replaced with "-"'s
+    the corresponding images and story, The word is also formatted so that
+    if the word contains spaces, the spaces are replaced with "-"'s
     """
     module = get_category_input()
     word = random.choice(module.CHOICES).upper()
@@ -117,7 +118,8 @@ def get_word():
 class Game:
     """
     Class that generates and displays computer
-    choice of words and tests user input is valid
+    choice of words and tests user input is valid, then checks when
+    game completed and if the player wants to replay
     """
     def __init__(self):
         self.word, self.images, self.story = get_word()
@@ -227,9 +229,8 @@ class Game:
 
 def main():
     """
-    Function to print dashes for amount of letters in a word,
-    take a user input and check if it is in the
-    word the computer has chosen and print message accordingly
+    Function to import and print introduction art, print rules,
+    then run game
     """
     introduction = importlib.import_module("ascii")
     print("\n")
