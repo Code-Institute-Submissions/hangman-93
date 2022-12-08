@@ -69,6 +69,7 @@ You can read more about Hangman on [Wikipedia](https://en.wikipedia.org/wiki/Han
 2. Python as the programming language
 3. Heroku for deployment
 4. Code Instistute Terminal for displaying finished product
+5. https://pep8ci.herokuapp.com/ CI Python Linter for testing code
 
 ## Imports used from Python Library
 * import random - Used to allow the computer to randomly pick a category if that is the choice the user has made and also to randomly pick the word from choices available
