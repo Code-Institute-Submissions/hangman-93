@@ -1,6 +1,8 @@
 
 <h1>Welcome to HANGMAN</h1>
 
+<img src="Docs/readme_img.png">
+
 This is a Python terminal version of [Hangman](https://forgottenit-hangman.herokuapp.com). It runs in the Code Institute mock terminal. 
 
 The User is given a certain amount of attempts to try guess letters in a hidden word picked by the computer.
