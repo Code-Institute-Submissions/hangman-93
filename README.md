@@ -24,7 +24,7 @@ You can read more about Hangman on [Wikipedia](https://en.wikipedia.org/wiki/Han
 
 ## Flow Chart for Hangman
 
-<img src="Docs/Flowchart.png">
+<img src="Docs/flowchart.png">
 
 ## Design
 
