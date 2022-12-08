@@ -7,7 +7,8 @@
     they will be already visible to the user.*
  5. Spaces are replaced by the underscore ("_") symbol until the user
     guesses the letter.
- 6. You can enter either uppercase or lowercase letters, it is not case sensitive.
+ 6. You can enter either uppercase or lowercase letters, it is 
+    not case sensitive.
 
    *Roman Numerals (i.e. I or V) are counted as letters
 
